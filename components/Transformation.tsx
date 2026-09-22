@@ -16,6 +16,12 @@ export default function Transformation() {
               </span>
             </>
           }
+          body={
+            <>
+              <span className="block">{c.closerA}</span>
+              <span className="mt-2 block font-display text-xl italic leading-snug text-gold">{c.closerB}</span>
+            </>
+          }
         />
 
         <div className={headerGap}>
@@ -28,7 +34,7 @@ export default function Transformation() {
             {c.rows.map((r, i) => (
               <li
                 key={r.from}
-                className="group grid items-center gap-3 py-5 md:grid-cols-[1fr_auto_1fr] md:gap-6 md:py-6"
+                className="group grid items-center gap-3 py-4 md:grid-cols-[1fr_auto_1fr] md:gap-6 md:py-5"
                 data-reveal
                 style={{ ["--reveal-delay" as string]: `${i * 80}ms` }}
               >
@@ -45,11 +51,6 @@ export default function Transformation() {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="mt-10 max-w-2xl" data-reveal>
-          <p className="font-display text-xl font-light text-bone-70">{c.closerA}</p>
-          <p className="mt-2 font-display text-2xl italic leading-tight text-gold md:text-3xl">{c.closerB}</p>
         </div>
       </Container>
     </section>

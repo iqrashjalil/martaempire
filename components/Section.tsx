@@ -16,9 +16,9 @@ export function Container({
 }
 
 /** Standard vertical rhythm for every section. */
-export const sectionPad = "py-20 md:py-24";
+export const sectionPad = "py-16 md:py-20";
 /** Gap between a section header and its content. */
-export const headerGap = "mt-12 md:mt-14";
+export const headerGap = "mt-10 md:mt-12";
 
 export function Eyebrow({
   children,

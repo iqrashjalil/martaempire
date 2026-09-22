@@ -87,7 +87,7 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
   };
 
   return (
-    <section id="apply" className="relative scroll-mt-24 overflow-hidden bg-ink-950 py-20 md:py-24">
+    <section id="apply" className="relative scroll-mt-24 overflow-hidden bg-ink-950 py-16 md:py-20">
       <div className="absolute inset-x-0 top-0 gold-rule" />
       <div className="absolute right-[-20%] top-[-10%] -z-0 h-[40rem] w-[40rem] rounded-full glow-gold blur-3xl opacity-60" />
       <Container className="relative">

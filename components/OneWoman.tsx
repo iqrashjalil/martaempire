@@ -5,7 +5,7 @@ import bed from "@/public/images/marta-bed.jpg";
 
 export default function OneWoman() {
   return (
-    <section id="one-woman" className="relative isolate overflow-hidden py-24 md:py-32">
+    <section id="one-woman" className="relative isolate overflow-hidden py-20 md:py-24">
       <div className="absolute inset-0 -z-10">
         <Image
           src={bed}

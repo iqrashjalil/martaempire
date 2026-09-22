@@ -10,8 +10,8 @@ export default function Finale() {
       <div className="absolute right-[-15%] top-[-10%] -z-10 h-[36rem] w-[36rem] rounded-full glow-gold blur-3xl" />
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
-          {/* Copy */}
-          <div className="lg:col-span-7">
+          {/* Copy (right on desktop) */}
+          <div className="lg:col-span-7 lg:col-start-6">
             <Eyebrow>{c.eyebrow}</Eyebrow>
             <h2 className="display-lg mt-6 text-bone" data-reveal>
               {c.title.split(" ").slice(0, 3).join(" ")}{" "}
@@ -40,9 +40,9 @@ export default function Finale() {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative lg:col-span-4 lg:col-start-9">
-            <div className="arch-frame mx-auto w-[80%] max-w-[360px] lg:w-full" data-reveal="right">
+          {/* Image (left on desktop) */}
+          <div className="relative order-last lg:order-first lg:col-span-4 lg:col-start-1 lg:row-start-1">
+            <div className="arch-frame mx-auto w-[80%] max-w-[360px] lg:w-full" data-reveal="left">
               <div className="arch relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={hallway}
