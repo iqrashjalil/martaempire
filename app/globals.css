@@ -121,21 +121,21 @@ body {
   font-weight: 300;
   line-height: 0.92;
   letter-spacing: -0.025em;
-  font-size: clamp(3.5rem, 10vw, 9.5rem);
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
 }
 .display-lg {
   font-family: var(--font-display);
   font-weight: 300;
   line-height: 1;
   letter-spacing: -0.02em;
-  font-size: clamp(2.6rem, 6.2vw, 5.6rem);
+  font-size: clamp(2.3rem, 4.6vw, 4.2rem);
 }
 .display-md {
   font-family: var(--font-display);
   font-weight: 300;
   line-height: 1.06;
   letter-spacing: -0.015em;
-  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
 }
 .display-sm {
   font-family: var(--font-display);
@@ -338,6 +338,7 @@ body {
 }
 .field::placeholder { color: var(--bone-30); font-style: italic; }
 .field:focus { outline: none; border-color: var(--gold); }
+textarea.field { overflow: hidden; min-height: 0; }
 
 /* ── Mobile hardening ───────────────────────────────────────── */
 html, body { overflow-x: clip; }

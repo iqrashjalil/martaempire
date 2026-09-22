@@ -30,7 +30,7 @@ export default function Nav() {
         }`}
       >
         <div
-          className={`mx-auto flex max-w-[1500px] items-center justify-between px-5 transition-all duration-700 sm:px-8 lg:px-12 ${
+          className={`mx-auto flex max-w-[1200px] items-center justify-between px-5 transition-all duration-700 sm:px-8 lg:px-10 ${
             scrolled ? "" : ""
           }`}
         >

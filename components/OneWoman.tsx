@@ -5,7 +5,7 @@ import bed from "@/public/images/marta-bed.jpg";
 
 export default function OneWoman() {
   return (
-    <section id="one-woman" className="relative isolate overflow-hidden py-40 md:py-56">
+    <section id="one-woman" className="relative isolate overflow-hidden py-24 md:py-32">
       <div className="absolute inset-0 -z-10">
         <Image
           src={bed}
@@ -20,33 +20,33 @@ export default function OneWoman() {
       </div>
 
       <Container>
-        <div className="mx-auto max-w-4xl text-center">
-          <Ornament />
-          <h2 className="mt-10 font-display text-[clamp(2.4rem,7vw,6.5rem)] font-light leading-[0.95] tracking-tight text-bone">
-            {c.words.map((w, i) => (
-              <span
-                key={w}
-                className="mr-[0.25em] inline-block"
-                data-reveal
-                style={{ ["--reveal-delay" as string]: `${i * 140}ms` }}
-              >
-                {w}
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-8">
+            <Ornament />
+            <h2 className="mt-6 font-display text-[clamp(2.2rem,5.5vw,4.6rem)] font-light leading-[0.95] tracking-tight text-bone">
+              {c.words.map((w, i) => (
+                <span
+                  key={w}
+                  className="mr-[0.25em] inline-block"
+                  data-reveal
+                  style={{ ["--reveal-delay" as string]: `${i * 140}ms` }}
+                >
+                  {w}
+                </span>
+              ))}
+              <span className="mt-2 block italic" data-reveal style={{ ["--reveal-delay" as string]: "460ms" }}>
+                <span className="gold-text">{c.title}</span>
               </span>
-            ))}
-            <span
-              className="mt-2 block italic"
-              data-reveal
-              style={{ ["--reveal-delay" as string]: "460ms" }}
-            >
-              <span className="gold-text">{c.title}</span>
-            </span>
-          </h2>
-          <p className="mx-auto mt-10 max-w-2xl text-lg leading-[1.85] text-bone-70" data-reveal>
-            {c.body}
-          </p>
-          <p className="mt-10 text-[0.68rem] uppercase tracking-[0.34em] text-gold" data-reveal>
-            {c.closer}
-          </p>
+            </h2>
+          </div>
+          <div className="self-end lg:col-span-4 lg:col-start-9">
+            <p className="max-w-md leading-[1.8] text-bone-70" data-reveal>
+              {c.body}
+            </p>
+            <p className="mt-6 text-[0.66rem] uppercase tracking-[0.34em] text-gold" data-reveal>
+              {c.closer}
+            </p>
+          </div>
         </div>
       </Container>
     </section>

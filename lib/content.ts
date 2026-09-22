@@ -28,7 +28,7 @@ export const hero = {
   titleB: "Identity.",
   subtitle: "You have outgrown the version of you that built this.",
   body:
-    "Private identity mentoring for established female founders building boutique, premium empires. We recalibrate the identity-level decisions shaping your pricing, positioning, client selection, visibility and capacity, so your business can hold premium clients without consuming the woman behind it.",
+    "Private identity mentoring for established female founders building boutique, premium empires. We recalibrate the decisions behind your pricing, positioning, clients and capacity, so the business holds premium clients without consuming you.",
   primary: { label: "The Truth Session · $666", href: "#invitation" },
   secondary: { label: "Apply for VIP Mentoring", href: "#apply" },
   caption: { name: "Marta Szkudlarek", role: "Queen Identity mentor" },
@@ -47,11 +47,10 @@ export const whereYouAre = {
   eyebrow: "Where You Actually Are",
   title: "You built a powerful business through patterns you no longer want to live inside.",
   body:
-    "Nothing here is broken. That is the part most people get wrong about you. You are not starting, not lost, not in need of repair. You have simply arrived at the level where the identity that produced this success can no longer carry what comes next.",
+    "Nothing here is broken. You are not starting, not lost, not in need of repair. You have arrived at the level where the identity that produced this success can no longer carry what comes next.",
   truths: [
     "The business works, but it still runs on your energy.",
     "You can sell, and you are still proving.",
-    "You have clients, and the model no longer matches who you are.",
     "Your name is recognised, but it does not yet carry weight.",
     "You do not need more information. You need precise confrontation.",
   ],
@@ -64,43 +63,43 @@ export const mechanism = {
   titleA: "We build the woman.",
   titleB: "Here is where the business follows.",
   body:
-    "Identity work only matters when it lands in decisions. These are the six places we work, in your real business, on your real numbers, with your real calendar.",
+    "Identity work only matters when it lands in decisions. These are the six places we work, on your real numbers and your real calendar.",
   areas: [
     {
       n: "I",
       title: "Pricing and offer architecture",
       body:
-        "We look at what your prices are actually saying about your self-concept, then rebuild the offer so the price, the depth and the delivery finally agree with each other.",
+        "What your prices say about your self-concept, and an offer where price, depth and delivery finally agree.",
     },
     {
       n: "II",
       title: "Client selection",
       body:
-        "Who gets access, who does not, and the decisions you have been making out of fear of an empty calendar. Fewer clients, chosen on purpose.",
+        "Who gets access, who does not, and the yeses you say out of fear of an empty calendar.",
     },
     {
       n: "III",
       title: "Positioning and communication",
       body:
-        "One category, one clear promise, one recognisable voice. We remove the noise that makes a strong brand read as a general one.",
+        "One category, one clear promise, one recognisable voice.",
     },
     {
       n: "IV",
       title: "Visibility and authority",
       body:
-        "How much of the truth you allow into public view. Weight is built by saying the specific thing, consistently, in your own register.",
+        "How much truth you allow into public view, said consistently in your own register.",
     },
     {
       n: "V",
       title: "Access, boundaries and capacity",
       body:
-        "Your calendar, your response times, your availability, your team. We design a container where scale does not cost you your nervous system.",
+        "Calendar, response times, team. A container where scale does not cost your nervous system.",
     },
     {
       n: "VI",
       title: "Decision-making and structure",
       body:
-        "How you decide when it is expensive, uncomfortable or unpopular. Structure that compounds instead of resetting every season.",
+        "How you decide when it is expensive or unpopular. Structure that compounds instead of resetting.",
     },
   ],
   closer: "Soul becomes a decision. That is the whole method.",
@@ -114,7 +113,6 @@ export const transformation = {
     { from: "Volume of clients holding the revenue.", to: "Fewer clients, higher entry, deeper work." },
     { from: "Prices set by what feels safe to say out loud.", to: "Prices set by the value of the depth she gives." },
     { from: "The business dependent on her daily energy.", to: "A model that runs on structure, not adrenaline." },
-    { from: "A recognisable name without weight.", to: "A name people say in rooms she is not in." },
     { from: "A new era, a new model, every season.", to: "One body of work, compounding into a legacy." },
   ],
   closerA: "You came here for impact.",
@@ -126,7 +124,7 @@ export const pillars = {
   titleA: "Four pillars of the",
   titleB: "Queen.",
   body:
-    "Each pillar has two layers. Who you become, and what you begin to do differently in the business. Identity is the root, and roots take time. When the root becomes solid, the empire holds.",
+    "Each pillar has two layers: who you become, and what you begin to do differently in the business. When the root is solid, the empire holds.",
   items: [
     {
       n: "01",
@@ -135,7 +133,7 @@ export const pillars = {
       becomes:
         "The woman who no longer decides from approval, and knows exactly what she is worth before she opens her mouth.",
       does:
-        "Sets prices from the depth she gives instead of what feels safe. Makes the expensive decision without a committee. Says the specific thing in public, in her own register, and stops softening it for reach.",
+        "Sets prices from the depth she gives, not from what feels safe. Makes the expensive decision without a committee and says the specific thing in public.",
       mantra: "Your identity is the strategy. Everything else is execution.",
     },
     {
@@ -145,7 +143,7 @@ export const pillars = {
       becomes:
         "The woman who builds one thing for the next ten years instead of a new era every season.",
       does:
-        "Defines capacity before she sells. Designs the offer around a real outcome, not around her availability. Keeps a working rhythm that leaves room for creation, so the business compounds instead of restarting.",
+        "Defines capacity before she sells. Designs the offer around a real outcome and keeps a rhythm that lets the business compound.",
       mantra: "Structure is the throne. Everything else is decoration.",
     },
     {
@@ -155,7 +153,7 @@ export const pillars = {
       becomes:
         "The woman who no longer trades parts of herself for closeness, revenue or approval.",
       does:
-        "Selects clients on purpose and declines the ones who cost more than they pay. Defines response times and days off in writing. Delegates what was never hers to carry, and holds the same standard in her relationships.",
+        "Selects clients on purpose and declines the ones who cost more than they pay. Puts response times and days off in writing, and delegates what was never hers to carry.",
       mantra: "You do not lower your throne. You raise the entry.",
     },
     {
@@ -165,7 +163,7 @@ export const pillars = {
       becomes:
         "The woman who creates from fullness, and leads without living inside permanent pressure.",
       does:
-        "Creates from her own material instead of the market's. Lets her brand sound like her. Receives money, help and attention without shrinking. Leads with clarity rather than urgency, and stays long enough to become undeniable.",
+        "Creates from her own material, not the market's. Receives money, help and attention without shrinking, and leads with clarity rather than urgency.",
       mantra: "Depth is the differentiator. Presence is the leverage.",
     },
   ],
@@ -175,7 +173,7 @@ export const oneWoman = {
   words: ["Business.", "Money.", "Standards."],
   title: "One woman.",
   body:
-    "The prices you set, the clients you keep, the access you grant, the wealth you allow. They are a single mirror of your self-concept. Change the woman, and every decision downstream changes with her.",
+    "The prices you set, the clients you keep, the access you grant. One mirror of your self-concept. Change the woman, and every decision downstream changes with her.",
   closer: "Fewer clients. Higher entry. Deeper work.",
 };
 
@@ -183,50 +181,50 @@ export const stories = {
   eyebrow: "What The Work Produces",
   titleA: "Four women.",
   titleB: "Four decisions that changed the model.",
-  body: "Details are kept private, as they are inside the room. The logic of the transformation is the point.",
+  body: "Details stay private, as they do inside the room. The logic of the change is the point.",
   items: [
     {
       who: "A service founder with a full calendar and no room in it.",
-      cost: "The business worked because she was always available. Access to her was the product.",
-      decision: "She stopped selling access and rebuilt the boundaries of the offer around a defined outcome.",
-      change:
-        "A boutique client model, a raised entry point, and two working days protected for creation instead of delivery.",
+      cost: "Access to her was the product.",
+      decision: "She rebuilt the offer around a defined outcome instead of availability.",
+      change: "A boutique model, a raised entry point, two days a week protected for creation.",
     },
     {
-      who: "A seven figure founder whose brand was known but generic.",
-      cost: "She was recognised for a category, not for a point of view. Every launch started from zero.",
-      decision: "She named the one thing she is willing to be known for, and let the rest of the offers go.",
-      change: "One clear position, communication in her own voice, and inbound clients who arrive already convinced.",
+      who: "A seven-figure founder whose brand was known but generic.",
+      cost: "Recognised for a category, not for a point of view.",
+      decision: "She named the one thing she is willing to be known for.",
+      change: "One clear position, and inbound clients who arrive already convinced.",
     },
     {
       who: "A founder who could sell to anyone and still felt she had to prove it.",
-      cost: "She discounted under pressure and said yes to clients who cost her more than they paid.",
-      decision: "She set the price at the level of the depth she actually gives, and held it.",
-      change: "A selection process before every yes, and a client list she is genuinely glad to work with.",
+      cost: "Discounts under pressure, and clients who cost more than they paid.",
+      decision: "She priced at the level of the depth she gives, and held it.",
+      change: "A selection process before every yes, and a client list she is glad to work with.",
     },
     {
-      who: "A founder in expansion whose structure was built for an earlier version of her.",
+      who: "A founder in expansion with a structure built for an earlier version of her.",
       cost: "Every quarter she rebuilt the model. Nothing accumulated.",
-      decision: "She kept one model and deepened it instead of restarting, with capacity and rhythm defined first.",
-      change: "A business that compounds, with revenue no longer tied to how much she personally holds.",
+      decision: "She kept one model and deepened it, with capacity defined first.",
+      change: "A business that compounds, with revenue no longer tied to how much she holds.",
     },
   ],
 };
 
 export const fit = {
+  eyebrow: "Is This For You",
+  titleA: "Who this is",
+  titleB: "built for.",
   forTitle: "This is for her",
   forItems: [
-    "She is an established founder, already earning, already leading.",
-    "Her business works and it still depends too much on her energy.",
+    "An established founder, already earning, already leading.",
+    "A business that works and still depends on her energy.",
     "She wants a boutique model: higher prices, fewer clients, deeper work.",
-    "She has outgrown the way she built her current success.",
     "She wants precise confrontation, not more information.",
   ],
   notTitle: "This is not for her",
   notItems: [
     "She is looking for a quick fix or a rescue.",
     "She wants a course, templates or a funnel.",
-    "She is at the beginning and needs a first business model.",
     "She wants agreement more than she wants the truth.",
   ],
 };
@@ -244,26 +242,11 @@ export const invitation = {
       terms: "One payment · 90 minutes · Live 1:1",
       body:
         "A complete standalone piece of work. We name the identity pattern running your business, price it in real terms, and define the one decision that changes the next thirty days.",
-      steps: [
-        {
-          k: "Before we meet",
-          v: "A short intake on your numbers, your model, your capacity and where the business is costing you the most of yourself. I read it personally and arrive already seeing the pattern.",
-        },
-        {
-          k: "The session",
-          v: "90 minutes, live, 1:1. We name the pattern, trace what it costs you in pricing, client selection, visibility and capacity, and decide the highest-leverage change.",
-        },
-        {
-          k: "Your Truth Map",
-          v: "After the session you receive a written Truth Map: the pattern named, its cost, the one decision to make, and a clear direction for the next thirty days.",
-        },
-      ],
       includes: [
         "Private 90-minute session, live, 1:1",
-        "Pre-session intake, read personally before we speak",
+        "Pre-session intake, read personally",
         "Full session recording",
-        "Written Truth Map with your named pattern and its cost",
-        "One decision defined, with a 30-day direction",
+        "Written Truth Map: the pattern, its cost, one decision, a 30-day direction",
       ],
       cta: { label: "Begin The Truth Session · $666", href: site.truthSessionCheckout, external: true },
       note: "Instant booking · Secure checkout",
@@ -276,33 +259,16 @@ export const invitation = {
       price: "3 × $4,997",
       terms: "3-month private container",
       body:
-        "Three months to rebuild the identity holding your pricing, positioning, client selection, visibility and capacity, and to make those decisions real inside the business while we work.",
-      steps: [
-        {
-          k: "Deep intake",
-          v: "We map your model, your numbers, your capacity, your standards and your chart before we begin. I am not collecting information. I am connecting patterns.",
-        },
-        {
-          k: "Sessions every two weeks",
-          v: "Private 1:1 sessions on your real decisions: what you charge, who you accept, what you say publicly, what you stop carrying. The rhythm exists so each shift roots before the next.",
-        },
-        {
-          k: "Telegram access, Monday to Thursday",
-          v: "Direct access for the decisions that cannot wait: a price, a proposal, a boundary, a room you are about to walk into.",
-        },
-      ],
+        "Three months to rebuild the identity holding your pricing, positioning, client selection, visibility and capacity, and to make those decisions real while we work.",
       includes: [
         "Deep intake mapping identity, model, numbers and capacity",
-        "Private 1:1 sessions every two weeks, in real time",
+        "Private 1:1 sessions every two weeks",
         "Telegram access Monday to Thursday",
-        "Repricing and offer architecture work",
-        "Client selection criteria and access boundaries defined in writing",
+        "Repricing, offer architecture and client criteria in writing",
         "Positioning and visibility built in your own voice",
-        "A confidential space that moves at the speed of truth, not curriculum",
       ],
       cta: { label: "Apply for VIP Mentoring", href: "#apply", external: false },
-      note:
-        "By application only. I hold a small number of private clients at a time, and I read every application myself before a conversation is offered.",
+      note: "By application only. I hold a small number of private clients at a time and read every application myself.",
       featured: true,
     },
   ],
@@ -316,11 +282,11 @@ export const faq = {
   items: [
     {
       q: "I have already worked with mentors.",
-      a: "Then you already have the strategy. We do not add another layer to it. We change the identity making the decisions inside it: what you charge, who you accept, what you say publicly, what you refuse to carry.",
+      a: "Then you already have the strategy. We change the identity making the decisions inside it: what you charge, who you accept, what you say publicly, what you refuse to carry.",
     },
     {
       q: "I do not have time for another long program.",
-      a: "There is no curriculum to consume. We work in real time, on decisions you are already facing this month. The shift happens while you run the business.",
+      a: "There is no curriculum. We work in real time, on decisions you are already facing this month, while you run the business.",
     },
     {
       q: "What is the actual difference between the two tiers?",
@@ -338,7 +304,7 @@ export const about = {
   titleA: "I do not build fast.",
   titleB: "I build for the next twenty years.",
   body:
-    "Everything I mentor was built in my own body first. Tested for years. Refined through the transformation of hundreds of women. Not theory. Ground you can stand on.",
+    "Everything I mentor was built in my own body first, tested for years and refined through hundreds of women. Not theory. Ground you can stand on.",
   facts: [
     { k: "Format", v: "Private, 1:1, live" },
     { k: "Clients", v: "A small number at a time" },
@@ -350,9 +316,9 @@ export const finale = {
   eyebrow: "An Invitation",
   title: "Build the business the next version of you would run.",
   body:
-    "Higher prices. Fewer clients. Deeper work. A position only you can hold, and a name that keeps speaking when you are not in the room.",
+    "Higher prices. Fewer clients. Deeper work. A name that keeps speaking when you are not in the room.",
   quoteA: "The Queen does not arrive in a hurry.",
-  quoteB: "She arrives the moment you stop starting over and finally stay. In the body. In the work. In the truth.",
+  quoteB: "She arrives the moment you stop starting over and finally stay.",
   primary: { label: "Apply for VIP Mentoring", href: "#apply" },
   secondary: { label: "The Truth Session · $666", href: site.truthSessionCheckout },
 };

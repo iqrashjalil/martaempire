@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { application as c, site } from "@/lib/content";
-import { Container, Eyebrow } from "./Section";
+import { Container, SectionHeader, headerGap } from "./Section";
 import desk from "@/public/images/marta-desk.jpg";
 
 type Values = Record<string, string>;
@@ -87,45 +87,22 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
   };
 
   return (
-    <section id="apply" className="relative scroll-mt-24 overflow-hidden bg-ink-950 py-28 md:py-40">
+    <section id="apply" className="relative scroll-mt-24 overflow-hidden bg-ink-950 py-20 md:py-24">
       <div className="absolute inset-x-0 top-0 gold-rule" />
       <div className="absolute right-[-20%] top-[-10%] -z-0 h-[40rem] w-[40rem] rounded-full glow-gold blur-3xl opacity-60" />
       <Container className="relative">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
-          {/* Left: the invitation */}
-          <div className="lg:col-span-5">
-            <div>
-              <Eyebrow>{c.eyebrow}</Eyebrow>
-              <h2 className="display-lg mt-8 text-bone" data-reveal>
-                Write to <span className="italic text-gold">me.</span>
-              </h2>
-              <p className="mt-8 max-w-md leading-[1.85] text-bone-70" data-reveal>
-                {c.body}
-              </p>
+        <SectionHeader
+          eyebrow={c.eyebrow}
+          title={
+            <>
+              Write to <span className="italic text-gold">me.</span>
+            </>
+          }
+          body={c.body}
+        />
 
-              <ol className="mt-12 space-y-6 border-l border-line pl-7" data-reveal>
-                {[
-                  ["I read it personally", "Every application, in full. No assistant, no filter."],
-                  ["I reply within days", "If your model, your moment and my room match, you hear from me directly."],
-                  ["A conversation is offered", "Only then do we talk about which door: the Truth Session or VIP Mentoring."],
-                ].map(([k, v], i) => (
-                  <li key={k} className="relative">
-                    <span className="absolute -left-[33px] top-1.5 h-3 w-3 rounded-full border border-gold bg-ink-950" />
-                    <p className="font-display text-xl text-bone">
-                      <span className="roman mr-3 text-base">0{i + 1}</span>
-                      {k}
-                    </p>
-                    <p className="mt-1 text-[0.9rem] leading-relaxed text-bone-50">{v}</p>
-                  </li>
-                ))}
-              </ol>
-
-            </div>
-          </div>
-
-          {/* Right: one question at a time */}
-          <div className="lg:col-span-7">
-            <div className="card-luxe relative grid overflow-hidden md:min-h-[36rem] md:grid-cols-[minmax(0,15rem)_1fr] lg:grid-cols-[minmax(0,17rem)_1fr]" data-reveal>
+        <div className={headerGap}>
+            <div className="card-luxe relative grid overflow-hidden md:min-h-[28rem] md:grid-cols-[minmax(0,16rem)_1fr] lg:grid-cols-[minmax(0,20rem)_1fr]" data-reveal>
               <div className="relative hidden md:block">
                 {imageSrc ? (
                   <Image src={imageSrc} alt="Marta Szkudlarek" fill sizes="(max-width: 1024px) 30vw, 18vw" className="object-cover object-top" />
@@ -197,12 +174,16 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
                           }}
                           id={q.key}
                           name={q.key}
-                          rows={3}
+                          rows={1}
                           className="field"
                           placeholder={q.placeholder ?? "Write freely…"}
                           value={values[q.key] ?? ""}
                           maxLength={q.max}
-                          onChange={(e) => setValues((v) => ({ ...v, [q.key]: e.target.value }))}
+                          onChange={(e) => {
+                            setValues((v) => ({ ...v, [q.key]: e.target.value }));
+                            e.target.style.height = "auto";
+                            e.target.style.height = `${e.target.scrollHeight}px`;
+                          }}
                           onKeyDown={onKey}
                         />
                       ) : (
@@ -256,7 +237,6 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
               )}
               </div>
             </div>
-          </div>
         </div>
       </Container>
     </section>

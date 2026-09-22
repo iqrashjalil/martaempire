@@ -65,7 +65,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="mt-8 max-w-xl font-display text-2xl font-light italic leading-snug text-bone/90 md:text-[1.85rem]"
+              className="mt-6 max-w-xl font-display text-2xl font-light italic leading-snug text-bone/90 md:text-[1.7rem]"
               data-reveal
               style={{ ["--reveal-delay" as string]: "700ms" }}
             >
@@ -73,7 +73,7 @@ export default function Hero() {
             </p>
 
             <p
-              className="mt-6 max-w-xl text-[0.95rem] leading-[1.8] text-bone-70"
+              className="mt-5 max-w-xl text-[0.95rem] leading-[1.8] text-bone-70"
               data-reveal
               style={{ ["--reveal-delay" as string]: "850ms" }}
             >
@@ -81,7 +81,7 @@ export default function Hero() {
             </p>
 
             <div
-              className="mt-9 flex flex-col gap-4 sm:flex-row"
+              className="mt-8 flex flex-col gap-4 sm:flex-row"
               data-reveal
               style={{ ["--reveal-delay" as string]: "1000ms" }}
             >
