@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marta Empire
 
-## Getting Started
+Premium marketing site for Queen Identity mentoring, built with Next.js 16, React 19 and Tailwind CSS v4.
 
-First, run the development server:
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Application form
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Submissions POST to `/api/apply`. Set `APPLICATIONS_WEBHOOK_URL` in `.env.local` to forward each
+application as JSON to a webhook (Make, Zapier, n8n, a Supabase Edge Function, etc). Without it,
+submissions are logged on the server.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Structure
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` — routes (`/`, `/terms`, `/api/apply`), fonts, metadata, OG image
+- `components/` — one file per section; interactive pieces are client components
+- `lib/content.ts` — every line of copy on the site
+- `public/images/` — photography
