@@ -16,7 +16,7 @@ export function Container({
   );
 }
 
-export const sectionPad = "py-28 md:py-40";
+export const sectionPad = "py-16 md:py-24";
 
 /** Inline style helper for staggered reveals: --i (index) and --base (delay). */
 export const stagger = (i: number, base = 0): CSSProperties =>

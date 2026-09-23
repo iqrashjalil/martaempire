@@ -2,7 +2,7 @@ import Image from "next/image";
 import { whereYouAre as c } from "@/lib/content";
 import { Container, Heading, sectionPad, stagger } from "./Section";
 import { Frame } from "./Ornaments";
-import bed from "@/public/images/marta-bed.jpg";
+import sofa from "@/public/images/marta-sofa.jpg";
 
 const numerals = ["I", "II", "III", "IV", "V", "VI"];
 
@@ -36,12 +36,12 @@ export default function WhereYouAre() {
               <Frame offset="right">
                 <div className="relative aspect-[4/5]">
                   <Image
-                    src={bed}
-                    alt="Marta Szkudlarek, portrait"
+                    src={sofa}
+                    alt="Marta Szkudlarek seated on a sofa with her laptop"
                     fill
                     placeholder="blur"
                     sizes="(max-width: 1024px) 82vw, 30vw"
-                    className="object-cover object-[50%_20%]"
+                    className="object-cover"
                   />
                 </div>
               </Frame>

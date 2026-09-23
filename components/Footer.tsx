@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footer as c, mantras, site } from "@/lib/content";
+import { footer as c, hero, site } from "@/lib/content";
 import { Container } from "./Section";
 import { Diamond } from "./Ornaments";
 
@@ -14,7 +14,7 @@ export default function Footer() {
               <Diamond className="h-2 w-2" />
               <span className="italic">Empire</span>
             </p>
-            <p className="mt-5 font-display text-lg italic text-bone-50">{mantras[0]}</p>
+            <p className="mt-5 max-w-[40ch] font-display text-lg italic text-bone-50">{hero.body}</p>
           </div>
           <div className="md:col-span-3">
             <p className="caption text-gold">Navigate</p>

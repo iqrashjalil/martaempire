@@ -23,6 +23,9 @@ export default function Invitation() {
             }
             lead={c.closer}
           />
+          <p className="caption reveal mx-auto mt-8 max-w-2xl text-center text-gold" style={stagger(3)}>
+            {c.order}
+          </p>
         </div>
 
         <div className="mt-20 grid gap-8 lg:mt-28 lg:grid-cols-2 lg:gap-10" data-reveal>
@@ -36,7 +39,8 @@ export default function Invitation() {
             >
               <Corners inset={12} />
               <Emblem className="absolute right-8 top-8 h-[4.5rem] w-[4.5rem] text-gold/75 md:right-12 md:top-12 md:h-20 md:w-20" />
-              <h3 className="max-w-[9ch] font-display text-[2.4rem] leading-none text-bone md:text-[3rem]">{t.name}</h3>
+              <p className="caption pr-24 text-gold">{t.tier}</p>
+              <h3 className="mt-4 max-w-[9ch] font-display text-[2.4rem] leading-none text-bone md:text-[3rem]">{t.name}</h3>
               <p className="mt-7 flex flex-wrap items-baseline gap-x-5 gap-y-2">
                 <span className="font-display text-[2.4rem] leading-none text-gold-bright md:text-[2.8rem]">{t.price}</span>
                 <span className="caption">{t.terms}</span>
@@ -68,7 +72,7 @@ export default function Invitation() {
                     {t.cta.label}
                   </Link>
                 )}
-                <p className="mt-5 text-[0.9rem] leading-[1.6] text-bone-50">{t.note}</p>
+                <p className="mt-5 text-[0.95rem] leading-[1.6] text-bone-50">{t.note}</p>
               </div>
             </article>
             );

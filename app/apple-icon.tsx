@@ -17,7 +17,7 @@ export default async function AppleIcon() {
           alignItems: "center",
           justifyContent: "center",
           background: "radial-gradient(circle at 30% 20%, #1a1816, #0b0a09 70%)",
-          color: "#e6c98b",
+          color: "#e9cf96",
           fontFamily: "Cormorant",
           fontSize: 132,
           lineHeight: 1,

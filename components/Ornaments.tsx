@@ -107,7 +107,7 @@ export function Seal({
           />
           <text
             fontSize="7.4"
-            letterSpacing="2.6"
+            letterSpacing="1.7"
             fill="currentColor"
             fontFamily="var(--font-sans)"
             fontWeight="500"

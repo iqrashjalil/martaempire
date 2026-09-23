@@ -1,15 +1,38 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { pillars as c } from "@/lib/content";
 import { Container, Heading, sectionPad, stagger } from "./Section";
 import { Frame } from "./Ornaments";
-import sofa from "@/public/images/marta-sofa.jpg";
+import bed from "@/public/images/marta-bed.jpg";
 
 export default function Pillars() {
   const [active, setActive] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const p = c.items[active];
+  const count = c.items.length;
+
+  const go = (i: number) => {
+    const n = (i + count) % count;
+    setActive(n);
+    tabs.current[n]?.focus();
+  };
+
+  const onKey = (e: React.KeyboardEvent) => {
+    const map: Record<string, number> = {
+      ArrowRight: active + 1,
+      ArrowDown: active + 1,
+      ArrowLeft: active - 1,
+      ArrowUp: active - 1,
+      Home: 0,
+      End: count - 1,
+    };
+    if (e.key in map) {
+      e.preventDefault();
+      go(map[e.key]);
+    }
+  };
 
   return (
     <section id="pillars" className={`relative scroll-mt-24 overflow-hidden ${sectionPad}`}>
@@ -21,12 +44,12 @@ export default function Pillars() {
               <Frame offset="left">
                 <div className="relative aspect-[3/4]">
                   <Image
-                    src={sofa}
-                    alt="Marta Szkudlarek seated on a sofa with her laptop"
+                    src={bed}
+                    alt="Marta Szkudlarek, portrait"
                     fill
                     placeholder="blur"
                     sizes="(max-width: 1024px) 82vw, 38vw"
-                    className="object-cover"
+                    className="object-cover object-[50%_20%]"
                   />
                 </div>
               </Frame>
@@ -47,19 +70,29 @@ export default function Pillars() {
             </div>
 
             <div className="mt-14 grid gap-10 md:grid-cols-12" data-reveal>
-              <ul className="reveal flex gap-1 overflow-x-auto md:col-span-5 md:flex-col md:gap-0 md:overflow-visible" role="tablist" style={stagger(0)}>
+              <ul
+                className="reveal grid grid-cols-2 gap-x-6 md:col-span-5 md:flex md:flex-col"
+                role="tablist"
+                aria-label="Pillars"
+                onKeyDown={onKey}
+                style={stagger(0)}
+              >
                 {c.items.map((item, i) => {
                   const on = i === active;
                   return (
-                    <li key={item.n} className="shrink-0 md:shrink">
+                    <li key={item.n}>
                       <button
+                        ref={(el) => {
+                          tabs.current[i] = el;
+                        }}
                         type="button"
                         role="tab"
                         aria-selected={on}
                         aria-controls={`pillar-panel-${i}`}
                         id={`pillar-tab-${i}`}
+                        tabIndex={on ? 0 : -1}
                         onClick={() => setActive(i)}
-                        className={`group flex w-full items-baseline gap-4 border-b py-4 pr-6 text-left transition-colors duration-500 md:pr-0 ${
+                        className={`group flex w-full items-baseline gap-3 border-b py-4 text-left transition-colors duration-500 md:gap-4 ${
                           on ? "border-gold" : "border-line hover:border-gold/50"
                         }`}
                       >
@@ -68,7 +101,7 @@ export default function Pillars() {
                         </span>
                         <span>
                           <span
-                            className={`block whitespace-nowrap font-display text-xl leading-none transition-colors duration-500 md:text-[1.6rem] ${
+                            className={`block font-display text-xl leading-none transition-colors duration-500 md:text-[1.6rem] ${
                               on ? "text-bone" : "text-bone-50 group-hover:text-bone-70"
                             }`}
                           >
@@ -93,7 +126,9 @@ export default function Pillars() {
                   <p className="caption md:hidden">{p.tags}</p>
                   <p className="caption mt-6 md:mt-0">Who she becomes</p>
                   <p className="mt-4 font-display text-[1.5rem] italic leading-snug text-bone md:text-[1.8rem]">{p.becomes}</p>
-                  <p className="mt-10 border-t border-gold/25 pt-6 font-display text-xl italic text-gold">{p.mantra}</p>
+                  <p className="caption mt-8 text-gold">What she does</p>
+                  <p className="mt-3 max-w-[50ch] text-[1rem] leading-[1.8] text-bone-70">{p.does}</p>
+                  <p className="mt-8 border-t border-gold/25 pt-6 font-display text-xl italic text-gold">{p.mantra}</p>
                 </div>
               </div>
             </div>

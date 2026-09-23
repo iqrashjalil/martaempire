@@ -11,7 +11,7 @@ const delay = (ms: number) => ({ ["--d" as string]: `${ms}ms` });
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-svh items-center overflow-hidden pt-32 pb-24 md:pt-36">
+    <section className="relative isolate flex min-h-svh items-center overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24">
       <div className="absolute inset-0 -z-20">
         <Image src={texture} alt="" fill preload sizes="100vw" className="object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-ink-900/70 to-ink-900" />
@@ -21,9 +21,9 @@ export default function Hero() {
       <span className="light left-[-15%] bottom-[-20%] -z-10 h-[34rem] w-[34rem] opacity-60" />
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-8">
-          {/* Voice */}
-          <div className="order-last lg:order-first lg:col-span-6">
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-8">
+          {/* Voice: on every width the proposition and the action come first. */}
+          <div className="lg:col-span-6">
             <h1 className="display-xl text-bone">
               <span className="line-mask">
                 <span style={delay(200)}>{hero.titleA}</span>
@@ -46,16 +46,19 @@ export default function Hero() {
               className="fade-up mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10"
               style={delay(1040)}
             >
-              <Link href={hero.primary.href} className="btn btn-gold">
+              <a href={hero.primary.href} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
                 {hero.primary.label}
-              </Link>
+              </a>
               <Link href={hero.secondary.href} className="link">
                 {hero.secondary.label}
                 <Arrow />
               </Link>
             </div>
+            <p className="caption fade-up mt-5 text-bone-50" style={delay(1100)}>
+              {hero.primaryNote}
+            </p>
 
-            <p className="caption fade-up mt-14 flex flex-wrap items-center gap-x-4 gap-y-2" style={delay(1200)}>
+            <p className="caption fade-up mt-12 flex flex-wrap items-center gap-x-4 gap-y-2" style={delay(1200)}>
               <span className="text-bone">{hero.caption.name}</span>
               <Diamond className="h-1.5 w-1.5" />
               <span>{hero.caption.role}</span>
@@ -63,7 +66,7 @@ export default function Hero() {
           </div>
 
           {/* Composition: arched portrait, offset gold frame, a second photograph, the seal */}
-          <div className="relative mx-auto mb-12 w-full max-w-[520px] lg:col-span-6 lg:mb-0 lg:max-w-none">
+          <div className="relative mx-auto mb-10 w-full max-w-[400px] sm:max-w-[480px] lg:col-span-6 lg:mb-0 lg:max-w-none">
             <div className="relative ml-auto w-[76%] lg:w-[72%]">
               <svg
                 aria-hidden

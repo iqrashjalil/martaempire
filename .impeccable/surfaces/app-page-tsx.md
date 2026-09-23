@@ -13,7 +13,7 @@ Rejected earlier the same day: an editorial refinement (too close to the old tem
 
 ## Direction contract
 
-THESIS: A warm boutique house on black velvet. Photographs in gold frames, a Garamond voice, candle-light pools and ornament that feels engraved rather than decorated. It refuses both the glowing-card coaching template and the bare lookbook.
+THESIS: A warm boutique house on black velvet. Photographs in gold frames, a Garamond voice, one gold action (the Truth Session) carried from hero to panel, candle-light pools and ornament that feels engraved rather than decorated. It refuses both the glowing-card coaching template and the bare lookbook.
 
 OWN-WORLD: Ink-900 ground with a still grain and a faint satin weave; bone type; gold as frame, numeral, rule, diamond and price. Cormorant Garamond (semibold for display, medium italic for leads and numerals) for every heading, lead and pull line; Manrope for body and small uppercase captions. Ornament vocabulary: the rule-diamond-rule divider, gold corner marks, offset gold frames behind photographs, roman numerals, the MARTA EMPIRE seal with an ME monogram. One soft gold light per section. Rectangular gold buttons with a fill sweep; underlined uppercase text links. Offers sit in gold-bordered panels; everything else on hairlines.
 

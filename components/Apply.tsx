@@ -14,7 +14,7 @@ export default function Apply() {
       <Container className="relative">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4" data-reveal>
-            <Letter className="reveal mb-9 h-20 w-20 text-gold" style={stagger(0)} />
+            <Letter className="reveal mb-8 h-16 w-16 text-gold lg:h-20 lg:w-20" style={stagger(0)} />
             <Heading
               align="left"
               title={
@@ -25,7 +25,7 @@ export default function Apply() {
               lead={c.body}
             />
             <p className="caption reveal mt-8 text-gold">{c.meta}</p>
-            <Flourish className="reveal mt-10 w-56 text-gold/80" />
+            <Flourish className="reveal mt-10 hidden w-56 text-gold/80 lg:block" />
           </div>
           <div className="reveal lg:col-span-7 lg:col-start-6">
             <ApplicationForm />

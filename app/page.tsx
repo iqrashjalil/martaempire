@@ -5,6 +5,8 @@ import Ticker from "@/components/Ticker";
 import WhereYouAre from "@/components/WhereYouAre";
 import Mechanism from "@/components/Mechanism";
 import Pillars from "@/components/Pillars";
+import Stories from "@/components/Stories";
+import Fit from "@/components/Fit";
 import Invitation from "@/components/Invitation";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
@@ -16,12 +18,14 @@ export default function Home() {
     <>
       <Effects />
       <Nav />
-      <main>
+      <main id="main">
         <Hero />
         <Ticker />
         <WhereYouAre />
         <Mechanism />
         <Pillars />
+        <Stories />
+        <Fit />
         <Invitation />
         <About />
         <FAQ />

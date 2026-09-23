@@ -19,7 +19,7 @@ export default async function Icon() {
           background: "#0b0a09",
           borderRadius: 14,
           border: "1px solid rgba(207,174,116,0.5)",
-          color: "#e6c98b",
+          color: "#e9cf96",
           fontFamily: "Cormorant",
           fontSize: 48,
           lineHeight: 1,

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { nav, site } from "@/lib/content";
+import { hero, nav, site } from "@/lib/content";
 import { Diamond } from "./Ornaments";
 
 export default function Nav() {
@@ -30,11 +30,12 @@ export default function Nav() {
 
   return (
     <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <header
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-[padding,background-color,border-color] duration-500 ${
-          scrolled
-            ? "border-gold/15 bg-ink-900/85 py-4 backdrop-blur-md"
-            : "border-transparent bg-transparent py-6 md:py-7"
+        className={`fixed inset-x-0 top-0 z-50 border-b py-3 transition-[background-color,border-color] duration-500 md:py-5 ${
+          scrolled ? "border-gold/15 bg-ink-900/85 backdrop-blur-md" : "border-transparent bg-transparent"
         }`}
       >
         <div className="mx-auto flex w-full max-w-[1360px] items-center justify-between px-6 sm:px-10 lg:px-16">
@@ -61,9 +62,11 @@ export default function Nav() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link href="/#apply" className="btn btn-gold hidden px-5! py-2.5! sm:inline-flex">
-              Apply
-            </Link>
+            <span className="hidden sm:block">
+              <Link href="/#invitation" className="btn btn-gold px-5! py-2.5!">
+                Book a session
+              </Link>
+            </span>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -95,7 +98,7 @@ export default function Nav() {
         }`}
       >
         <span className="light left-1/2 top-1/4 h-[60vw] w-[60vw] -translate-x-1/2" />
-        <nav className="relative px-6 pb-14 sm:px-10" aria-label="Mobile">
+        <nav className="relative px-6 pb-12 sm:px-10" aria-label="Mobile">
           <ul>
             {nav.map((item, i) => (
               <li
@@ -108,7 +111,7 @@ export default function Nav() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-baseline gap-4 py-5 font-display text-[2.1rem] leading-none text-bone"
+                  className="flex items-baseline gap-4 py-4 font-display text-[2.1rem] leading-none text-bone"
                 >
                   <span className="numeral text-base">{String(i + 1).padStart(2, "0")}</span>
                   {item.label}
@@ -117,15 +120,28 @@ export default function Nav() {
             ))}
           </ul>
           <div
-            className={`mt-10 flex flex-col gap-4 transition-[opacity,transform] duration-700 ease-out-expo ${
+            className={`mt-8 flex flex-col gap-4 transition-[opacity,transform] duration-700 ease-out-expo ${
               open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
             style={{ transitionDelay: open ? "460ms" : "0ms" }}
           >
-            <Link href="/#apply" onClick={() => setOpen(false)} className="btn btn-gold">
+            <a
+              href={hero.primary.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="btn btn-gold"
+            >
+              {hero.primary.label}
+            </a>
+            <Link href="/#apply" onClick={() => setOpen(false)} className="btn btn-ghost">
               Apply for VIP Mentoring
             </Link>
-            <Link href="/terms" onClick={() => setOpen(false)} className="btn btn-ghost">
+            <Link
+              href="/terms"
+              onClick={() => setOpen(false)}
+              className="caption mt-2 self-center text-bone-50 transition-colors hover:text-bone"
+            >
               Terms
             </Link>
           </div>

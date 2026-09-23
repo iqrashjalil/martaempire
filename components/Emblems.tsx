@@ -172,6 +172,20 @@ export function Laurel(p: GlyphProps) {
   );
 }
 
+/** A structure that compounds: the column. */
+export function Column(p: GlyphProps) {
+  return (
+    <Svg {...p}>
+      <path {...d} d="M16 13h32" />
+      <path {...d} d="M19 17h26" />
+      <path {...d} d="M22 20v29M42 20v29" />
+      <path {...d} d="M28 22v25M36 22v25" />
+      <path {...d} d="M19 51h26" />
+      <path {...d} d="M16 55h32" />
+    </Svg>
+  );
+}
+
 /** The application: a letter under a wax seal. */
 export function Letter(p: GlyphProps) {
   return (

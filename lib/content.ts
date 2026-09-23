@@ -22,12 +22,12 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "Private Identity Mentoring · 1:1",
   titleA: "Queen",
   titleB: "Identity.",
   subtitle: "You have outgrown the version of you that built this.",
   body: "Private identity mentoring for established female founders building boutique, premium empires.",
-  primary: { label: "The Truth Session · $666", href: "#invitation" },
+  primary: { label: "Book the Truth Session · $666", href: site.truthSessionCheckout },
+  primaryNote: "Secure checkout on Stripe · 90 minutes, live 1:1",
   secondary: { label: "Apply for VIP Mentoring", href: "#apply" },
   caption: { name: "Marta Szkudlarek", role: "Queen Identity mentor" },
 };
@@ -42,7 +42,6 @@ export const mantras = [
 ];
 
 export const whereYouAre = {
-  eyebrow: "Where You Actually Are",
   title: "You built it. Now it runs on you.",
   body: "Nothing here is broken. You have simply outgrown it.",
   truths: [
@@ -56,7 +55,6 @@ export const whereYouAre = {
 };
 
 export const mechanism = {
-  eyebrow: "The Mechanism",
   titleA: "We build the woman.",
   titleB: "Here is where the business follows.",
   body: "Six places the work lands, on your real numbers and your real calendar.",
@@ -98,11 +96,9 @@ export const mechanism = {
         "How you decide when it is expensive or unpopular. Structure that compounds instead of resetting.",
     },
   ],
-  closer: "Soul becomes a decision. That is the whole method.",
 };
 
 export const pillars = {
-  eyebrow: "What We Actually Work On",
   titleA: "Four pillars of the",
   titleB: "Queen.",
   body: "Who you become, and what you do differently. When the root is solid, the empire holds.",
@@ -150,16 +146,35 @@ export const pillars = {
   ],
 };
 
-export const oneWoman = {
-  words: ["Business.", "Money.", "Standards."],
-  title: "One woman.",
-  body:
-    "The prices you set, the clients you keep, the access you grant. One mirror of your self-concept. Change the woman, and every decision downstream changes with her.",
-  closer: "Fewer clients. Higher entry. Deeper work.",
+export const stories = {
+  titleA: "Four women.",
+  titleB: "Four decisions that changed the model.",
+  body: "Details stay private, as they do inside the room. The logic of the change is the point.",
+  items: [
+    {
+      who: "A service founder with a full calendar and no room in it.",
+      decision: "She rebuilt the offer around a defined outcome instead of availability.",
+      change: "A boutique model, a raised entry point, two days a week protected for creation.",
+    },
+    {
+      who: "A seven-figure founder whose brand was known but generic.",
+      decision: "She named the one thing she is willing to be known for.",
+      change: "One clear position, and inbound clients who arrive already convinced.",
+    },
+    {
+      who: "A founder who could sell to anyone and still felt she had to prove it.",
+      decision: "She priced at the level of the depth she gives, and held it.",
+      change: "A selection process before every yes, and a client list she is glad to work with.",
+    },
+    {
+      who: "A founder in expansion with a structure built for an earlier version of her.",
+      decision: "She kept one model and deepened it, with capacity defined first.",
+      change: "A business that compounds, with revenue no longer tied to how much she holds.",
+    },
+  ],
 };
 
 export const fit = {
-  eyebrow: "Is This For You",
   titleA: "Who this is",
   titleB: "built for.",
   forTitle: "This is for her",
@@ -178,40 +193,37 @@ export const fit = {
 };
 
 export const invitation = {
-  eyebrow: "The Invitation Stack",
   titleA: "Two ways in.",
   titleB: "One identity being built.",
+  order: "Start with the Truth Session. VIP Mentoring is by application, and applying commits you to nothing.",
   tiers: [
     {
       tier: "Tier 01 · The Initiation",
       name: "The Truth Session",
-      pre: "Queen Identity:",
       price: "$666",
       terms: "One payment · 90 minutes · Live 1:1",
       body: "We name the pattern running your business, price it, and define the one decision that changes the next thirty days.",
       includes: ["Private 90-minute session, live, 1:1", "Intake read personally", "Written Truth Map and full recording"],
-      cta: { label: "Begin The Truth Session · $666", href: site.truthSessionCheckout, external: true },
-      note: "Instant booking · Secure checkout",
-      featured: false,
+      cta: { label: "Book the Truth Session · $666", href: site.truthSessionCheckout, external: true },
+      note: "Opens secure checkout on Stripe in a new tab. Receipt by email. Start here if you are new.",
+      featured: true,
     },
     {
       tier: "Tier 02 · The Container",
       name: "VIP Mentoring",
-      pre: "Queen Identity",
       price: "3 × $4,997",
-      terms: "3-month private container",
+      terms: "Three payments · 3-month private container",
       body: "Three months to rebuild the identity behind your pricing, positioning, clients and capacity.",
       includes: ["Private 1:1 sessions every two weeks", "Telegram access Monday to Thursday", "Repricing, client criteria and positioning"],
       cta: { label: "Apply for VIP Mentoring", href: "#apply", external: false },
-      note: "By application only. I read every application myself.",
-      featured: true,
+      note: "By application only. Applying commits you to nothing; I read every application myself.",
+      featured: false,
     },
   ],
   closer: "You do not build the empire first. You become the woman who builds it.",
 };
 
 export const faq = {
-  eyebrow: "Before You Decide",
   titleA: "The honest",
   titleB: "answers.",
   items: [
@@ -231,11 +243,18 @@ export const faq = {
       q: "What exactly will change in my business?",
       a: "Your prices, your client criteria, your availability, your positioning and your rhythm.",
     },
+    {
+      q: "Does applying commit me to anything?",
+      a: "No. Applying is a conversation, not a purchase. Nothing is paid unless we both decide to work together.",
+    },
+    {
+      q: "What happens after I book the Truth Session?",
+      a: "Stripe sends your receipt. The intake follows by email, and we set the session time from there.",
+    },
   ],
 };
 
 export const about = {
-  eyebrow: "The woman behind the work",
   titleA: "I do not build fast.",
   titleB: "I build for the next twenty years.",
   body: "Everything I mentor was built in my own body first. Not theory. Ground you can stand on.",
@@ -243,6 +262,7 @@ export const about = {
     { k: "Format", v: "Private, 1:1, live" },
     { k: "Clients", v: "A small number at a time" },
     { k: "Method", v: "Identity → decisions → revenue" },
+    { k: "Based", v: "Poznań, Poland · clients worldwide" },
   ],
 };
 
@@ -257,10 +277,22 @@ export type Question = {
 };
 
 export const application = {
-  eyebrow: "Application",
   title: "Write to me.",
   body: "I read every application myself. If your model, your moment and my room match, I will write to you personally.",
   meta: "7 questions · ~4 minutes",
+  intro: {
+    title: "Seven questions. One woman reading.",
+    body: "Your name, your email, and five honest answers about what you are building, where it is going, why now, your revenue, and the transformation you are ready for.",
+    cta: "Begin the application",
+    aside: "Private & confidential",
+    reassurance: "Applying commits you to nothing. Your answers stay between us, and you can review them before they are sent.",
+  },
+  review: {
+    title: "Read it once more.",
+    hint: "Everything you wrote, exactly as I will read it.",
+    legal: "By sending this you agree to the",
+    cta: "Send my application",
+  },
   questions: [
     { key: "full_name", question: "What is your full name?", type: "input", placeholder: "Your name", min: 2, max: 100 },
     {
@@ -302,7 +334,7 @@ export const application = {
       question: "What is your current revenue?",
       hint: "A range or a number. Your honesty sets the container.",
       type: "textarea",
-      min: 1,
+      min: 2,
       max: 500,
     },
     {
@@ -316,7 +348,7 @@ export const application = {
   ] satisfies Question[],
   success: {
     title: "Received.",
-    body: "I read every application personally. If there is resonance, you will hear from me directly within a few days.",
+    body: "I read every application personally. You will hear from me either way within a few days.",
     sign: "Thank you for the trust.",
   },
 };
@@ -324,6 +356,7 @@ export const application = {
 export const footer = {
   links: [
     { label: "About", href: "/#about" },
+    { label: "The Truth Session", href: "/#invitation" },
     { label: "Apply", href: "/#apply" },
     { label: "Terms", href: "/terms" },
     { label: "Contact", href: `mailto:${site.email}` },

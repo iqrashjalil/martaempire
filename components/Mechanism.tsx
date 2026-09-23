@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { mechanism as c } from "@/lib/content";
 import { Container, Heading, sectionPad, stagger } from "./Section";
-import { Divider } from "./Ornaments";
 import { Compass, Crown, Key, Queen, Rope, Scales } from "./Emblems";
 
 const emblems = [Scales, Key, Compass, Crown, Rope, Queen];
@@ -48,19 +47,12 @@ export default function Mechanism() {
               <Emblem className="absolute right-0 top-8 h-14 w-14 text-gold/70 transition-colors duration-500 group-hover:text-gold-bright sm:right-8 lg:right-10" />
               <span className="numeral text-3xl">{a.n}</span>
               <h3 className="mt-6 pr-16 font-display text-2xl leading-tight text-bone md:text-[1.8rem]">{a.title}</h3>
+              <p className="mt-4 max-w-[34ch] text-[0.95rem] leading-[1.7] text-bone-70">{a.body}</p>
             </li>
             );
           })}
         </ul>
 
-        <div className="mt-16 text-center" data-reveal>
-          <p className="reveal font-display text-2xl italic text-gold md:text-[1.9rem]" style={stagger(0)}>
-            {c.closer}
-          </p>
-          <div className="reveal mt-6" style={stagger(1)}>
-            <Divider />
-          </div>
-        </div>
       </Container>
     </section>
   );
