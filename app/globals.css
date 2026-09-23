@@ -2,8 +2,8 @@
 
 /* ─────────────────────────────────────────────────────────────
    Marta Empire — tokens
-   Black velvet and champagne gold. A Didone for the voice,
-   Manrope for the small print. Warm light, fine gold frames.
+   Black velvet and champagne gold. Cormorant Garamond for the
+   voice, Manrope for the small print. Warm light, fine gold frames.
    ───────────────────────────────────────────────────────────── */
 :root {
   --ink-950: #070605;
@@ -40,7 +40,7 @@
   --color-gold-line: var(--gold-line);
   --color-gold-faint: var(--gold-faint);
 
-  --font-display: var(--font-bodoni), "Bodoni Moda", "Didot", Georgia, serif;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", "Cormorant", Georgia, serif;
   --font-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -149,6 +149,7 @@ html.lenis body {
 /* ── Type ───────────────────────────────────────────────────── */
 .font-display {
   font-family: var(--font-display);
+  font-weight: 500;
 }
 .font-sans {
   font-family: var(--font-sans);
@@ -159,35 +160,33 @@ html.lenis body {
 .display-md,
 .display-sm {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-variation-settings: "opsz" 96;
+  font-weight: 600;
 }
 .display-xl {
-  line-height: 0.96;
+  line-height: 0.94;
   letter-spacing: -0.01em;
-  font-size: clamp(3.6rem, 8.6vw, 6rem);
+  font-size: clamp(3.9rem, 9.2vw, 6rem);
 }
 .display-lg {
-  line-height: 1.04;
+  line-height: 1.02;
   letter-spacing: -0.005em;
-  font-size: clamp(2.6rem, 4.8vw, 4.25rem);
+  font-size: clamp(2.8rem, 5.2vw, 4.6rem);
 }
 .display-md {
-  line-height: 1.1;
-  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  line-height: 1.08;
+  font-size: clamp(2.2rem, 3.5vw, 3.15rem);
 }
 .display-sm {
-  line-height: 1.2;
-  font-size: clamp(1.5rem, 2.1vw, 1.9rem);
+  line-height: 1.18;
+  font-size: clamp(1.65rem, 2.3vw, 2.05rem);
 }
 
 .lead {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 400;
-  font-variation-settings: "opsz" 48;
-  line-height: 1.35;
-  font-size: clamp(1.3rem, 1.9vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.3;
+  font-size: clamp(1.45rem, 2.05vw, 1.8rem);
   text-wrap: pretty;
 }
 
@@ -207,12 +206,11 @@ html.lenis body {
   color: var(--bone-50);
 }
 
-/* Ornamental numerals: Bodoni italic in gold. */
+/* Ornamental numerals: Cormorant italic in gold. */
 .numeral {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 500;
-  font-variation-settings: "opsz" 48;
+  font-weight: 600;
   color: var(--gold);
 }
 
@@ -220,6 +218,7 @@ html.lenis body {
 .roman {
   font-family: var(--font-display);
   font-style: italic;
+  font-weight: 600;
   color: var(--gold);
 }
 
@@ -407,9 +406,8 @@ html.lenis body {
   border-bottom: 1px solid var(--line-strong);
   padding: 0.9rem 0;
   font-family: var(--font-display);
-  font-variation-settings: "opsz" 48;
   font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--bone);
   transition: border-color 0.4s;
   resize: none;
@@ -603,6 +601,53 @@ html.js [data-reveal].is-in .reveal-photo img {
   animation: fade-up 0.6s var(--ease-out-expo) both;
 }
 
+/* ── Engraved glyphs ────────────────────────────────────────
+   Gold line art in one stroke weight. Inside a revealed block the
+   strokes draw themselves on; leaving the viewport erases them. */
+.glyph {
+  display: block;
+  color: var(--gold);
+  overflow: visible;
+}
+.glyph :is(path, circle, ellipse, line, polyline, rect) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.glyph .glyph-fill {
+  fill: currentColor;
+  stroke: none;
+}
+.glyph .glyph-ink {
+  fill: var(--ink-950);
+}
+.glyph-fine :is(path, circle, ellipse, line, polyline, rect) {
+  stroke-width: 0.7;
+}
+html.js :is(.reveal, [data-reveal]) .glyph [pathLength] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.5s var(--ease-out-expo);
+}
+html.js :is(.reveal.is-in, [data-reveal].is-in) .glyph [pathLength] {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.9s var(--ease-out-expo) 0.3s;
+}
+html.js :is(.reveal.is-in, [data-reveal].is-in) .glyph .glyph-fill,
+html.js :is(.reveal, [data-reveal]) .glyph .glyph-fill {
+  transition: opacity 0.8s var(--ease-out-expo) 1.2s;
+}
+html.js :is(.reveal, [data-reveal]):not(.is-in) .glyph .glyph-fill {
+  opacity: 0;
+  transition-delay: 0s;
+}
+.spin-slower {
+  animation: spin-slow 120s linear infinite;
+  transform-origin: center;
+}
+
 /* Gold line that draws under text on hover of its row. */
 .draw-line {
   background-image: linear-gradient(var(--gold), var(--gold));
@@ -638,6 +683,7 @@ html.js [data-reveal].is-in .reveal-photo img {
   .hero-photo img,
   .frame-draw,
   .seal-spin,
+  .spin-slower,
   .marquee-track,
   .step-in,
   .parallax-bg > img,
@@ -660,6 +706,14 @@ html.js [data-reveal].is-in .reveal-photo img {
   html.js [data-reveal] .reveal-photo img {
     clip-path: none;
     transform: none;
+    transition: none;
+  }
+  html.js :is(.reveal, [data-reveal]) .glyph [pathLength] {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  html.js :is(.reveal, [data-reveal]) .glyph .glyph-fill {
+    opacity: 1;
     transition: none;
   }
   .link::before,

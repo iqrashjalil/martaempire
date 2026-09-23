@@ -36,7 +36,8 @@ Identity work that lands in five business decisions: pricing, client selection, 
 
 - Name: Marta Empire. Mentor: Marta Szkudlarek.
 - Colour scheme is binding, confirmed by the user on 2026-09-23: near-black ground with champagne gold accents.
-- Typography chosen by the user on 2026-09-23: a bold high-contrast Didone for headlines (Bodoni Moda) with a clean sans for body (Manrope). The OG image and favicon (`app/opengraph-image.tsx`, `app/icon.tsx`, `app/apple-icon.tsx`) still render with the self-hosted Cormorant Garamond files in `app/fonts` and should be brought in line.
+- Typography chosen by the user on 2026-09-23: Cormorant Garamond for headlines (semibold display, medium italic leads) with a clean sans for body (Manrope). A hairline Didone (Bodoni Moda) was tried the same day and rejected as hard to read. The OG image and favicon (`app/opengraph-image.tsx`, `app/icon.tsx`, `app/apple-icon.tsx`) use the self-hosted Cormorant Garamond Light files in `app/fonts`, the same family at a lighter weight.
+- Graphics requested by the user on 2026-09-23: every section without a photograph carries engraved gold line art (`components/Emblems.tsx`), and each of the six mechanism decisions has its own emblem.
 - Style direction chosen by the user on 2026-09-23: warm boutique elegance with layered photo compositions, gold ornament and framing, texture and light, and rich motion. Rejected the same day: a plain editorial refinement and a sparse lookbook.
 - Voice: direct, confrontational, declarative sentences; no coaching clichés, no hype, no emoji.
 

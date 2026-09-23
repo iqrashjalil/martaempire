@@ -2,6 +2,9 @@ import Link from "next/link";
 import { invitation as c } from "@/lib/content";
 import { Container, Heading, sectionPad, stagger } from "./Section";
 import { Corners, Diamond } from "./Ornaments";
+import { Hourglass, Laurel } from "./Emblems";
+
+const emblems = [Hourglass, Laurel];
 
 export default function Invitation() {
   return (
@@ -23,14 +26,17 @@ export default function Invitation() {
         </div>
 
         <div className="mt-20 grid gap-8 lg:mt-28 lg:grid-cols-2 lg:gap-10" data-reveal>
-          {c.tiers.map((t, i) => (
+          {c.tiers.map((t, i) => {
+            const Emblem = emblems[i % emblems.length];
+            return (
             <article
               key={t.name}
               className={`panel reveal reveal-card flex flex-col p-8 md:p-12 ${t.featured ? "panel-featured" : ""}`}
               style={stagger(i, 150)}
             >
               <Corners inset={12} />
-              <h3 className="font-display text-[2.4rem] leading-none text-bone md:text-[3rem]">{t.name}</h3>
+              <Emblem className="absolute right-8 top-8 h-[4.5rem] w-[4.5rem] text-gold/75 md:right-12 md:top-12 md:h-20 md:w-20" />
+              <h3 className="max-w-[9ch] font-display text-[2.4rem] leading-none text-bone md:text-[3rem]">{t.name}</h3>
               <p className="mt-7 flex flex-wrap items-baseline gap-x-5 gap-y-2">
                 <span className="font-display text-[2.4rem] leading-none text-gold-bright md:text-[2.8rem]">{t.price}</span>
                 <span className="caption">{t.terms}</span>
@@ -65,7 +71,8 @@ export default function Invitation() {
                 <p className="mt-5 text-[0.9rem] leading-[1.6] text-bone-50">{t.note}</p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>

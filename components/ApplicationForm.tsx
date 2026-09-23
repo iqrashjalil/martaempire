@@ -90,12 +90,12 @@ export default function ApplicationForm() {
         <div className="step-in flex flex-1 flex-col justify-center">
           <p className="display-lg italic text-bone">{c.success.title}</p>
           <p className="prose-body mt-8">{c.success.body}</p>
-          <p className="mt-8 font-display text-2xl font-light italic text-gold">{c.success.sign}</p>
+          <p className="mt-8 font-display text-2xl italic text-gold">{c.success.sign}</p>
         </div>
       ) : !started ? (
         <div className="flex flex-1 flex-col justify-between gap-12">
           <div>
-            <p className="font-display text-3xl font-light leading-snug text-bone md:text-4xl">
+            <p className="font-display text-3xl leading-snug text-bone md:text-4xl">
               Seven questions. One woman reading.
             </p>
             <p className="prose-body mt-6">
@@ -127,7 +127,7 @@ export default function ApplicationForm() {
           <div key={q.key} className="step-in flex-1">
             <label
               htmlFor={q.key}
-              className="mt-12 block font-display text-3xl font-light leading-tight text-bone md:text-4xl"
+              className="mt-12 block font-display text-3xl leading-tight text-bone md:text-4xl"
             >
               {q.question}
             </label>

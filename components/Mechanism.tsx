@@ -2,6 +2,9 @@ import Image from "next/image";
 import { mechanism as c } from "@/lib/content";
 import { Container, Heading, sectionPad, stagger } from "./Section";
 import { Divider } from "./Ornaments";
+import { Compass, Crown, Key, Queen, Rope, Scales } from "./Emblems";
+
+const emblems = [Scales, Key, Compass, Crown, Rope, Queen];
 import mirror from "@/public/images/marta-mirror.jpg";
 
 export default function Mechanism() {
@@ -33,17 +36,21 @@ export default function Mechanism() {
         </div>
 
         <ul className="mt-20 grid border-t border-gold/20 sm:grid-cols-2 lg:mt-24 lg:grid-cols-3" data-reveal>
-          {c.areas.map((a, i) => (
+          {c.areas.map((a, i) => {
+            const Emblem = emblems[i % emblems.length];
+            return (
             <li
               key={a.n}
               className="reveal reveal-card group relative border-b border-gold/20 px-0 py-10 sm:px-8 lg:px-10 [&:nth-child(3n)]:lg:border-r-0 sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(odd)]:border-gold/20 lg:[&:nth-child(odd)]:border-r-0 lg:[&:not(:nth-child(3n))]:border-r lg:[&:not(:nth-child(3n))]:border-gold/20"
               style={stagger(i, 200)}
             >
               <span className="absolute inset-0 -z-10 bg-gradient-to-b from-gold/[0.07] to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              <Emblem className="absolute right-0 top-8 h-14 w-14 text-gold/70 transition-colors duration-500 group-hover:text-gold-bright sm:right-8 lg:right-10" />
               <span className="numeral text-3xl">{a.n}</span>
-              <h3 className="mt-5 font-display text-2xl leading-tight text-bone md:text-[1.7rem]">{a.title}</h3>
+              <h3 className="mt-6 pr-16 font-display text-2xl leading-tight text-bone md:text-[1.8rem]">{a.title}</h3>
             </li>
-          ))}
+            );
+          })}
         </ul>
 
         <div className="mt-16 text-center" data-reveal>

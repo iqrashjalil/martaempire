@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { faq as c } from "@/lib/content";
 import { Container, Heading, sectionPad, stagger } from "./Section";
+import { Crest, Flourish } from "./Emblems";
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
@@ -22,6 +23,10 @@ export default function FAQ() {
                   </>
                 }
               />
+              <div className="reveal mt-12 hidden lg:block" style={stagger(2)}>
+                <Crest className="h-52 w-52 text-gold/80" />
+                <Flourish className="mt-10 w-52 text-gold/80" />
+              </div>
             </div>
           </div>
 
