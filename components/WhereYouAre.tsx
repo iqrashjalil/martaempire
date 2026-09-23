@@ -1,37 +1,57 @@
+import Image from "next/image";
 import { whereYouAre as c } from "@/lib/content";
-import { Container, SectionHeader, headerGap, sectionPad } from "./Section";
+import { Container, Heading, sectionPad, stagger } from "./Section";
+import { Frame } from "./Ornaments";
+import bed from "@/public/images/marta-bed.jpg";
+
+const numerals = ["I", "II", "III", "IV", "V", "VI"];
 
 export default function WhereYouAre() {
   return (
     <section id="about-you" className={`relative overflow-hidden ${sectionPad}`}>
+      <span className="light left-1/2 top-0 h-[30rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 opacity-70" />
       <Container>
-        <SectionHeader eyebrow={c.eyebrow} title={c.title} body={c.body} size="md" />
+        <div data-reveal>
+          <Heading title={c.title} lead={c.body} />
+        </div>
 
-        <div className={`grid gap-10 lg:grid-cols-12 lg:gap-8 ${headerGap}`}>
-          <ol className="divide-y divide-line border-y border-line lg:col-span-7">
+        <div className="mt-20 grid gap-16 lg:mt-28 lg:grid-cols-12 lg:gap-12" data-reveal>
+          <ol className="lg:col-span-7">
             {c.truths.map((t, i) => (
               <li
                 key={t}
-                className="group flex items-baseline gap-6 py-5 md:py-6"
-                data-reveal
-                style={{ ["--reveal-delay" as string]: `${i * 90}ms` }}
+                className="reveal reveal-card group flex items-baseline gap-6 border-b border-line py-7 first:border-t md:py-8"
+                style={stagger(i)}
               >
-                <span className="roman w-8 shrink-0 text-lg transition-colors duration-500 group-hover:text-gold-bright">
-                  {String(i + 1).padStart(2, "0")}
+                <span className="numeral w-10 shrink-0 text-2xl transition-colors duration-500 group-hover:text-gold-bright">
+                  {numerals[i]}
                 </span>
-                <p className="font-display text-xl font-light leading-snug text-bone/90 transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-2 md:text-[1.6rem]">
-                  {t}
-                </p>
+                <p className="font-display text-2xl leading-snug text-bone md:text-[1.9rem]">{t}</p>
               </li>
             ))}
           </ol>
 
-          <figure className="relative self-end pl-6 lg:col-span-4 lg:col-start-9" data-reveal>
-            <span aria-hidden className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-gold via-gold/40 to-transparent" />
-            <blockquote className="font-display text-2xl font-light italic leading-[1.25] text-bone md:text-[1.75rem]">
+          <figure className="mx-auto w-[82%] max-w-[380px] self-center lg:col-span-4 lg:col-start-9 lg:w-full lg:max-w-none" data-reveal>
+            <div className="drift-slow">
+              <Frame offset="right">
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src={bed}
+                    alt="Marta Szkudlarek, portrait"
+                    fill
+                    placeholder="blur"
+                    sizes="(max-width: 1024px) 82vw, 30vw"
+                    className="object-cover object-[50%_20%]"
+                  />
+                </div>
+              </Frame>
+            </div>
+            <blockquote className="reveal mt-10 font-display text-[1.5rem] italic leading-[1.3] text-bone md:text-[1.7rem]" style={stagger(4)}>
               “{c.quote}”
             </blockquote>
-            <figcaption className="mt-4 text-[0.62rem] uppercase tracking-[0.3em] text-gold">{c.quoteBy}</figcaption>
+            <figcaption className="caption reveal mt-5 text-gold" style={stagger(5)}>
+              {c.quoteBy}
+            </figcaption>
           </figure>
         </div>
       </Container>

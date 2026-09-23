@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { pillars as c } from "@/lib/content";
-import { Container, SectionHeader, headerGap, sectionPad } from "./Section";
+import { Container, Heading, sectionPad, stagger } from "./Section";
+import { Frame } from "./Ornaments";
+import sofa from "@/public/images/marta-sofa.jpg";
 
 export default function Pillars() {
   const [active, setActive] = useState(0);
@@ -10,102 +13,88 @@ export default function Pillars() {
 
   return (
     <section id="pillars" className={`relative scroll-mt-24 overflow-hidden ${sectionPad}`}>
-      <div className="absolute inset-x-0 top-0 gold-rule" />
+      <span className="light left-[-10%] top-[30%] h-[36rem] w-[36rem] opacity-70" />
       <Container>
-        <SectionHeader
-          eyebrow={c.eyebrow}
-          title={
-            <>
-              {c.titleA} <span className="italic text-gold">{c.titleB}</span>
-            </>
-          }
-          body={c.body}
-        />
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-5" data-reveal>
+            <div className="drift-slow mx-auto w-[82%] max-w-[420px] lg:w-full">
+              <Frame offset="left">
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src={sofa}
+                    alt="Marta Szkudlarek seated on a sofa with her laptop"
+                    fill
+                    placeholder="blur"
+                    sizes="(max-width: 1024px) 82vw, 38vw"
+                    className="object-cover"
+                  />
+                </div>
+              </Frame>
+            </div>
+          </div>
 
-        <div className={`grid gap-8 lg:grid-cols-12 lg:gap-8 ${headerGap}`}>
-          {/* Selector */}
-          <ul
-            className="flex gap-2 overflow-x-auto pb-2 lg:col-span-5 lg:flex-col lg:gap-0 lg:overflow-visible lg:pb-0"
-            role="tablist"
-          >
-            {c.items.map((item, i) => {
-              const on = i === active;
-              return (
-                <li key={item.n} className="shrink-0 lg:shrink">
-                  <button
-                    type="button"
-                    role="tab"
-                    aria-selected={on}
-                    aria-controls={`pillar-panel-${i}`}
-                    id={`pillar-tab-${i}`}
-                    onClick={() => setActive(i)}
-                    onMouseEnter={() => setActive(i)}
-                    className={`group relative flex w-full items-baseline gap-4 border-b px-4 py-4 text-left transition-all duration-500 lg:px-0 lg:py-5 ${
-                      on ? "border-gold" : "border-line hover:border-line-strong"
-                    }`}
-                  >
-                    <span
-                      className={`roman text-base transition-colors duration-500 lg:text-lg ${
-                        on ? "text-gold-bright" : "text-bone-30"
-                      }`}
-                    >
-                      {item.n}
-                    </span>
-                    <span>
-                      <span
-                        className={`block font-display text-xl font-light transition-all duration-700 lg:text-[1.9rem] lg:leading-none ${
-                          on ? "translate-x-2 text-bone" : "text-bone-50 group-hover:text-bone-70"
-                        }`}
-                      >
-                        {item.title}
-                      </span>
-                      <span
-                        className={`mt-1.5 hidden text-[0.58rem] uppercase tracking-[0.24em] transition-all duration-500 lg:block ${
-                          on ? "translate-x-2 text-gold" : "text-bone-30"
-                        }`}
-                      >
-                        {item.tags}
-                      </span>
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Panel */}
           <div className="lg:col-span-7">
-            <div
-              key={p.n}
-              id={`pillar-panel-${active}`}
-              role="tabpanel"
-              aria-labelledby={`pillar-tab-${active}`}
-              className="card-luxe relative overflow-hidden p-7 md:p-9"
-              style={{ animation: "wordIn 0.9s var(--ease-luxe) both" }}
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-4 -top-8 select-none font-display text-[8rem] font-light leading-none text-gold/[0.06]"
-              >
-                {p.n}
-              </span>
-              <p className="text-[0.6rem] uppercase tracking-[0.3em] text-gold lg:hidden">{p.tags}</p>
+            <div data-reveal>
+              <Heading
+                align="left"
+                title={
+                  <>
+                    {c.titleA} <span className="italic text-gold-bright">{c.titleB}</span>
+                  </>
+                }
+                lead={c.body}
+              />
+            </div>
 
-              <div className="relative mt-4 lg:mt-0">
-                <p className="text-[0.6rem] uppercase tracking-[0.3em] text-bone-30">Who she becomes</p>
-                <p className="mt-3 font-display text-[1.4rem] font-light italic leading-snug text-bone md:text-2xl">
-                  {p.becomes}
-                </p>
-              </div>
+            <div className="mt-14 grid gap-10 md:grid-cols-12" data-reveal>
+              <ul className="reveal flex gap-1 overflow-x-auto md:col-span-5 md:flex-col md:gap-0 md:overflow-visible" role="tablist" style={stagger(0)}>
+                {c.items.map((item, i) => {
+                  const on = i === active;
+                  return (
+                    <li key={item.n} className="shrink-0 md:shrink">
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={on}
+                        aria-controls={`pillar-panel-${i}`}
+                        id={`pillar-tab-${i}`}
+                        onClick={() => setActive(i)}
+                        className={`group flex w-full items-baseline gap-4 border-b py-4 pr-6 text-left transition-colors duration-500 md:pr-0 ${
+                          on ? "border-gold" : "border-line hover:border-gold/50"
+                        }`}
+                      >
+                        <span className={`numeral text-sm transition-colors ${on ? "text-gold-bright" : "text-bone-30"}`}>
+                          {item.n}
+                        </span>
+                        <span>
+                          <span
+                            className={`block whitespace-nowrap font-display text-xl leading-none transition-colors duration-500 md:text-[1.6rem] ${
+                              on ? "text-bone" : "text-bone-50 group-hover:text-bone-70"
+                            }`}
+                          >
+                            {item.title}
+                          </span>
+                          <span className={`caption mt-2 hidden md:block ${on ? "text-gold" : "text-bone-30"}`}>{item.tags}</span>
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
 
-              <div className="relative mt-6 border-t border-line pt-6">
-                <p className="text-[0.6rem] uppercase tracking-[0.3em] text-bone-30">What she does differently</p>
-                <p className="mt-3 text-[0.95rem] leading-[1.75] text-bone-70">{p.does}</p>
-              </div>
-
-              <div className="relative mt-6 flex items-center gap-4">
-                <span className="h-px w-10 bg-gold/60" />
-                <p className="font-display text-base italic text-gold md:text-lg">{p.mantra}</p>
+              <div className="reveal md:col-span-7" style={stagger(1)}>
+                <div
+                  key={p.n}
+                  id={`pillar-panel-${active}`}
+                  role="tabpanel"
+                  aria-labelledby={`pillar-tab-${active}`}
+                  className="step-in"
+                >
+                  <p className="caption md:hidden">{p.tags}</p>
+                  <p className="caption mt-6 md:mt-0">Who she becomes</p>
+                  <p className="mt-4 font-display text-[1.5rem] italic leading-snug text-bone md:text-[1.8rem]">{p.becomes}</p>
+                  <p className="mt-10 border-t border-gold/25 pt-6 font-display text-xl italic text-gold">{p.mantra}</p>
+                </div>
               </div>
             </div>
           </div>

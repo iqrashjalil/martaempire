@@ -1,60 +1,63 @@
 import Image from "next/image";
-import { about as c } from "@/lib/content";
-import { Container, Eyebrow, sectionPad } from "./Section";
-import sofa from "@/public/images/marta-sofa.jpg";
+import { about as c, site } from "@/lib/content";
+import { Container, Heading, sectionPad, stagger } from "./Section";
+import { Corners, Frame } from "./Ornaments";
+import desk from "@/public/images/marta-desk.jpg";
 
 export default function About() {
   return (
     <section id="about" className={`relative scroll-mt-24 overflow-hidden ${sectionPad}`}>
-      <div className="absolute inset-x-0 top-0 gold-rule" />
+      <span className="light right-[-10%] bottom-[-10%] h-[40rem] w-[40rem] opacity-70" />
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-7">
-            <Eyebrow>{c.eyebrow}</Eyebrow>
-            <h2 className="display-lg mt-6 text-bone" data-reveal>
-              {c.titleA}
-              <br />
-              <span className="italic text-gold">{c.titleB}</span>
-            </h2>
-            <p
-              className="mt-6 max-w-md leading-[1.8] text-bone-70"
-              data-reveal
-              style={{ ["--reveal-delay" as string]: "120ms" }}
-            >
-              {c.body}
-            </p>
+        <div className="grid items-center gap-20 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-6">
+            <div data-reveal>
+              <Heading
+                align="left"
+                title={
+                  <>
+                    {c.titleA}
+                    <br />
+                    <span className="italic text-gold-bright">{c.titleB}</span>
+                  </>
+                }
+                lead={c.body}
+              />
+            </div>
 
-            <dl
-              className="mt-8 grid max-w-lg grid-cols-1 gap-px overflow-hidden border border-line bg-line sm:grid-cols-3"
-              data-reveal
-            >
-              {c.facts.map((f) => (
-                <div key={f.k} className="bg-ink-900 p-4">
-                  <dt className="text-[0.58rem] uppercase tracking-[0.28em] text-bone-30">{f.k}</dt>
-                  <dd className="mt-1.5 font-display text-base leading-tight text-bone">{f.v}</dd>
-                </div>
-              ))}
-            </dl>
-
-            <p className="mt-8 font-display text-2xl font-light italic text-bone" data-reveal>
-              — Marta Szkudlarek
+            <p className="reveal mt-12 font-display text-3xl italic text-gold-bright" data-reveal style={stagger(0)}>
+              {site.mentor}
             </p>
           </div>
 
-          <div className="relative lg:col-span-4 lg:col-start-9">
-            <div className="absolute -inset-10 -z-10 rounded-full glow-gold blur-3xl opacity-70" />
-            <div className="arch-frame mx-auto w-[80%] max-w-[360px] lg:w-full" data-reveal="right">
-              <div className="arch relative aspect-[3/4] overflow-hidden">
-                <Image
-                  src={sofa}
-                  alt="Marta Szkudlarek seated on a sofa with her laptop"
-                  fill
-                  placeholder="blur"
-                  sizes="(max-width: 1024px) 80vw, 28vw"
-                  className="object-cover transition-transform duration-[2000ms] ease-out hover:scale-[1.04]"
-                />
-              </div>
+          {/* The desk portrait in its frame, with the facts card laid over its corner */}
+          <div className="relative mx-auto w-full max-w-[520px] pb-16 lg:col-span-6 lg:max-w-none lg:pb-0" data-reveal>
+            <div className="drift-slow ml-auto w-[80%] lg:w-[76%]">
+              <Frame offset="right" corners={false}>
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src={desk}
+                    alt="Marta Szkudlarek at her desk"
+                    fill
+                    placeholder="blur"
+                    sizes="(max-width: 1024px) 80vw, 38vw"
+                    className="object-cover"
+                  />
+                </div>
+              </Frame>
             </div>
+            <dl
+              className="reveal absolute -bottom-2 left-0 w-[62%] border border-gold/40 bg-ink-950/95 p-6 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)] backdrop-blur-sm sm:w-[54%] lg:-bottom-10 lg:w-[50%] lg:p-8"
+              style={stagger(2, 400)}
+            >
+              <Corners inset={8} size={14} />
+              {c.facts.map((f, i) => (
+                <div key={f.k} className={`py-3 ${i > 0 ? "border-t border-gold/15" : ""}`}>
+                  <dt className="caption">{f.k}</dt>
+                  <dd className="mt-1 font-display text-lg leading-tight text-bone md:text-xl">{f.v}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </Container>

@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { Divider } from "./Ornaments";
 
-/** Shared page gutter. Every section's content starts at this left edge. */
+/** Shared page gutter. */
 export function Container({
   children,
   className = "",
@@ -9,78 +10,67 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:px-10 ${className}`}>
+    <div className={`mx-auto w-full max-w-[1360px] px-6 sm:px-10 lg:px-16 ${className}`}>
       {children}
     </div>
   );
 }
 
-/** Standard vertical rhythm for every section. */
-export const sectionPad = "py-16 md:py-20";
-/** Gap between a section header and its content. */
-export const headerGap = "mt-10 md:mt-12";
+export const sectionPad = "py-28 md:py-40";
 
-export function Eyebrow({
-  children,
-  className = "",
-  rule = true,
-}: {
-  children: ReactNode;
-  className?: string;
-  rule?: boolean;
-}) {
-  return (
-    <span className={`eyebrow inline-flex items-center gap-4 ${className}`}>
-      {rule && <span className="h-px w-10 bg-gold/60" />}
-      {children}
-    </span>
-  );
-}
+/** Inline style helper for staggered reveals: --i (index) and --base (delay). */
+export const stagger = (i: number, base = 0): CSSProperties =>
+  ({ ["--i" as string]: i, ["--base" as string]: `${base}ms` }) as CSSProperties;
 
 /**
- * One header pattern for every section: eyebrow, title, optional body.
- * Title sits in the left 7 columns, body in the right 4, bottom-aligned.
+ * A chapter opening: divider, title, optional lead. Centered by default,
+ * left-aligned with `align="left"`.
  */
-export function SectionHeader({
-  eyebrow,
+export function Heading({
   title,
-  body,
+  lead,
+  align = "center",
   size = "lg",
   className = "",
 }: {
-  eyebrow: ReactNode;
   title: ReactNode;
-  body?: ReactNode;
+  lead?: ReactNode;
+  align?: "center" | "left";
   size?: "lg" | "md";
   className?: string;
 }) {
+  const centered = align === "center";
   return (
-    <div className={`grid gap-6 lg:grid-cols-12 lg:gap-8 ${className}`}>
-      <div className="lg:col-span-7">
-        <Eyebrow>{eyebrow}</Eyebrow>
-        <h2 className={`${size === "lg" ? "display-lg" : "display-md"} mt-6 text-bone`} data-reveal>
-          {title}
-        </h2>
+    <div className={`${centered ? "mx-auto max-w-4xl text-center" : "max-w-3xl"} ${className}`}>
+      <div className="reveal" style={stagger(0)}>
+        <Divider className={centered ? "" : "[&>span:first-child]:hidden"} />
       </div>
-      {body && (
-        <p
-          className="max-w-md self-end leading-[1.8] text-bone-70 lg:col-span-4 lg:col-start-9"
-          data-reveal
-          style={{ ["--reveal-delay" as string]: "120ms" }}
-        >
-          {body}
+      <h2 className={`${size === "lg" ? "display-lg" : "display-md"} reveal mt-7 text-bone`} style={stagger(1)}>
+        {title}
+      </h2>
+      {lead && (
+        <p className={`lead reveal mt-7 text-bone-70 ${centered ? "mx-auto max-w-2xl" : "max-w-2xl"}`} style={stagger(2)}>
+          {lead}
         </p>
       )}
     </div>
   );
 }
 
-export function Ornament({ className = "" }: { className?: string }) {
+/** A small drawn arrow for text links. */
+export function Arrow({ className = "" }: { className?: string }) {
   return (
-    <span aria-hidden className={`inline-flex items-center gap-3 text-gold ${className}`}>
-      <span className="h-px w-8 bg-gold/50" />
-      <span className="text-sm">✦</span>
-      <span className="h-px w-8 bg-gold/50" />
-    </span>
+    <svg
+      className={`arrow h-[0.85em] w-[0.85em] shrink-0 ${className}`}
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M2 8h11M9 3.5 13.5 8 9 12.5" />
+    </svg>
   );
 }

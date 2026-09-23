@@ -1,19 +1,14 @@
 import Effects from "@/components/Effects";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
+import Ticker from "@/components/Ticker";
 import WhereYouAre from "@/components/WhereYouAre";
 import Mechanism from "@/components/Mechanism";
-import Transformation from "@/components/Transformation";
 import Pillars from "@/components/Pillars";
-import OneWoman from "@/components/OneWoman";
-import Stories from "@/components/Stories";
-import Fit from "@/components/Fit";
 import Invitation from "@/components/Invitation";
-import FAQ from "@/components/FAQ";
 import About from "@/components/About";
-import Finale from "@/components/Finale";
-import ApplicationSection from "@/components/ApplicationSection";
+import FAQ from "@/components/FAQ";
+import Apply from "@/components/Apply";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -23,19 +18,14 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Marquee />
+        <Ticker />
         <WhereYouAre />
         <Mechanism />
-        <Transformation />
         <Pillars />
-        <OneWoman />
-        <Stories />
-        <Fit />
         <Invitation />
-        <FAQ />
         <About />
-        <Finale />
-        <ApplicationSection />
+        <FAQ />
+        <Apply />
       </main>
       <Footer />
     </>

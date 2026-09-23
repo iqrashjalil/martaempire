@@ -1,78 +1,53 @@
 import Link from "next/link";
 import { invitation as c } from "@/lib/content";
-import { Container, SectionHeader, headerGap, sectionPad } from "./Section";
+import { Container, Heading, sectionPad, stagger } from "./Section";
+import { Corners, Diamond } from "./Ornaments";
 
 export default function Invitation() {
   return (
-    <section id="invitation" className={`relative scroll-mt-24 overflow-hidden ${sectionPad}`}>
-      <div className="absolute inset-x-0 top-0 gold-rule" />
-      <div className="absolute left-1/2 top-1/2 -z-10 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2 rounded-full glow-gold blur-3xl opacity-50" />
+    <section id="invitation" className={`relative isolate scroll-mt-24 overflow-hidden border-t border-gold/15 bg-ink-950 ${sectionPad}`}>
+      <div className="absolute inset-0 -z-20 satin" />
+      <span className="light left-1/2 top-1/2 -z-10 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2" />
       <Container>
-        <SectionHeader
-          eyebrow={c.eyebrow}
-          title={
-            <>
-              {c.titleA}
-              <br />
-              <span className="italic text-gold">{c.titleB}</span>
-            </>
-          }
-          body={c.closer}
-        />
+        <div data-reveal>
+          <Heading
+            title={
+              <>
+                {c.titleA}
+                <br />
+                <span className="italic text-gold-bright">{c.titleB}</span>
+              </>
+            }
+            lead={c.closer}
+          />
+        </div>
 
-        <div className={`grid gap-5 lg:grid-cols-2 lg:items-stretch ${headerGap}`}>
+        <div className="mt-20 grid gap-8 lg:mt-28 lg:grid-cols-2 lg:gap-10" data-reveal>
           {c.tiers.map((t, i) => (
             <article
               key={t.name}
-              className={`relative flex flex-col p-6 md:p-7 ${
-                t.featured
-                  ? "bg-gradient-to-b from-ink-800 to-ink-950 shadow-[0_40px_120px_-40px_rgba(207,174,116,0.35)]"
-                  : "card-luxe"
-              }`}
-              data-reveal
-              style={{ ["--reveal-delay" as string]: `${i * 140}ms` }}
+              className={`panel reveal reveal-card flex flex-col p-8 md:p-12 ${t.featured ? "panel-featured" : ""}`}
+              style={stagger(i, 150)}
             >
-              {t.featured && (
-                <>
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 -z-10 rounded-[inherit] p-px"
-                    style={{
-                      background:
-                        "linear-gradient(160deg, rgba(236,211,154,0.9), rgba(207,174,116,0.25) 40%, rgba(154,123,69,0.15) 70%, rgba(236,211,154,0.6))",
-                      WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                      WebkitMaskComposite: "xor",
-                      maskComposite: "exclude",
-                    }}
-                  />
-                  <span className="absolute -top-3 left-6 bg-gold px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.3em] text-ink-950 md:left-7">
-                    By application
-                  </span>
-                </>
-              )}
+              <Corners inset={12} />
+              <h3 className="font-display text-[2.4rem] leading-none text-bone md:text-[3rem]">{t.name}</h3>
+              <p className="mt-7 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+                <span className="font-display text-[2.4rem] leading-none text-gold-bright md:text-[2.8rem]">{t.price}</span>
+                <span className="caption">{t.terms}</span>
+              </p>
 
-              <p className="text-[0.6rem] uppercase tracking-[0.3em] text-gold">{t.tier}</p>
-              <h3 className="mt-3 font-display text-[2rem] font-light leading-none text-bone md:text-[2.4rem]">
-                {t.name}
-              </h3>
+              <p className="mt-8 max-w-[50ch] text-[1rem] leading-[1.8] text-bone-70">{t.body}</p>
 
-              <div className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-y border-line py-3">
-                <span className="font-display text-3xl font-light text-bone">{t.price}</span>
-                <span className="text-[0.62rem] uppercase tracking-[0.24em] text-bone-50">{t.terms}</span>
-              </div>
-
-              <p className="mt-4 text-[0.9rem] leading-[1.7] text-bone-70">{t.body}</p>
-
-              <ul className="mt-4 space-y-2 border-t border-line pt-4">
+              <ul className="mt-8 divide-y divide-gold/15 border-y border-gold/15">
                 {t.includes.map((inc) => (
-                  <li key={inc} className="flex gap-3 text-[0.88rem] text-bone-70">
-                    <span className="mt-[0.45rem] h-px w-4 shrink-0 bg-gold" />
+                  <li key={inc} className="flex items-baseline gap-4 py-3.5 text-[0.95rem] leading-[1.6] text-bone">
+                    <Diamond className="relative top-[-1px] h-1.5 w-1.5" />
                     {inc}
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-10">
                 {t.cta.external ? (
                   <a
                     href={t.cta.href}
@@ -87,6 +62,7 @@ export default function Invitation() {
                     {t.cta.label}
                   </Link>
                 )}
+                <p className="mt-5 text-[0.9rem] leading-[1.6] text-bone-50">{t.note}</p>
               </div>
             </article>
           ))}

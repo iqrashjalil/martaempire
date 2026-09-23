@@ -17,7 +17,6 @@ export const site = {
 export const nav = [
   { label: "The Work", href: "/#mechanism" },
   { label: "Pillars", href: "/#pillars" },
-  { label: "Is This For You", href: "/#for-you" },
   { label: "Invitation", href: "/#invitation" },
   { label: "About", href: "/#about" },
 ];
@@ -27,8 +26,7 @@ export const hero = {
   titleA: "Queen",
   titleB: "Identity.",
   subtitle: "You have outgrown the version of you that built this.",
-  body:
-    "Private identity mentoring for established female founders building boutique, premium empires. We recalibrate the decisions behind your pricing, positioning, clients and capacity, so the business holds premium clients without consuming you.",
+  body: "Private identity mentoring for established female founders building boutique, premium empires.",
   primary: { label: "The Truth Session · $666", href: "#invitation" },
   secondary: { label: "Apply for VIP Mentoring", href: "#apply" },
   caption: { name: "Marta Szkudlarek", role: "Queen Identity mentor" },
@@ -45,9 +43,8 @@ export const mantras = [
 
 export const whereYouAre = {
   eyebrow: "Where You Actually Are",
-  title: "You built a powerful business through patterns you no longer want to live inside.",
-  body:
-    "Nothing here is broken. You are not starting, not lost, not in need of repair. You have arrived at the level where the identity that produced this success can no longer carry what comes next.",
+  title: "You built it. Now it runs on you.",
+  body: "Nothing here is broken. You have simply outgrown it.",
   truths: [
     "The business works, but it still runs on your energy.",
     "You can sell, and you are still proving.",
@@ -62,8 +59,7 @@ export const mechanism = {
   eyebrow: "The Mechanism",
   titleA: "We build the woman.",
   titleB: "Here is where the business follows.",
-  body:
-    "Identity work only matters when it lands in decisions. These are the six places we work, on your real numbers and your real calendar.",
+  body: "Six places the work lands, on your real numbers and your real calendar.",
   areas: [
     {
       n: "I",
@@ -105,26 +101,11 @@ export const mechanism = {
   closer: "Soul becomes a decision. That is the whole method.",
 };
 
-export const transformation = {
-  eyebrow: "The Transformation",
-  titleA: "From a business that takes her.",
-  titleB: "To an empire that carries her.",
-  rows: [
-    { from: "Volume of clients holding the revenue.", to: "Fewer clients, higher entry, deeper work." },
-    { from: "Prices set by what feels safe to say out loud.", to: "Prices set by the value of the depth she gives." },
-    { from: "The business dependent on her daily energy.", to: "A model that runs on structure, not adrenaline." },
-    { from: "A new era, a new model, every season.", to: "One body of work, compounding into a legacy." },
-  ],
-  closerA: "You came here for impact.",
-  closerB: "Structure is the throne. Everything else is decoration.",
-};
-
 export const pillars = {
   eyebrow: "What We Actually Work On",
   titleA: "Four pillars of the",
   titleB: "Queen.",
-  body:
-    "Each pillar has two layers: who you become, and what you begin to do differently in the business. When the root is solid, the empire holds.",
+  body: "Who you become, and what you do differently. When the root is solid, the empire holds.",
   items: [
     {
       n: "01",
@@ -177,39 +158,6 @@ export const oneWoman = {
   closer: "Fewer clients. Higher entry. Deeper work.",
 };
 
-export const stories = {
-  eyebrow: "What The Work Produces",
-  titleA: "Four women.",
-  titleB: "Four decisions that changed the model.",
-  body: "Details stay private, as they do inside the room. The logic of the change is the point.",
-  items: [
-    {
-      who: "A service founder with a full calendar and no room in it.",
-      cost: "Access to her was the product.",
-      decision: "She rebuilt the offer around a defined outcome instead of availability.",
-      change: "A boutique model, a raised entry point, two days a week protected for creation.",
-    },
-    {
-      who: "A seven-figure founder whose brand was known but generic.",
-      cost: "Recognised for a category, not for a point of view.",
-      decision: "She named the one thing she is willing to be known for.",
-      change: "One clear position, and inbound clients who arrive already convinced.",
-    },
-    {
-      who: "A founder who could sell to anyone and still felt she had to prove it.",
-      cost: "Discounts under pressure, and clients who cost more than they paid.",
-      decision: "She priced at the level of the depth she gives, and held it.",
-      change: "A selection process before every yes, and a client list she is glad to work with.",
-    },
-    {
-      who: "A founder in expansion with a structure built for an earlier version of her.",
-      cost: "Every quarter she rebuilt the model. Nothing accumulated.",
-      decision: "She kept one model and deepened it, with capacity defined first.",
-      change: "A business that compounds, with revenue no longer tied to how much she holds.",
-    },
-  ],
-};
-
 export const fit = {
   eyebrow: "Is This For You",
   titleA: "Who this is",
@@ -240,14 +188,8 @@ export const invitation = {
       pre: "Queen Identity:",
       price: "$666",
       terms: "One payment · 90 minutes · Live 1:1",
-      body:
-        "A complete standalone piece of work. We name the identity pattern running your business, price it in real terms, and define the one decision that changes the next thirty days.",
-      includes: [
-        "Private 90-minute session, live, 1:1",
-        "Pre-session intake, read personally",
-        "Full session recording",
-        "Written Truth Map: the pattern, its cost, one decision, a 30-day direction",
-      ],
+      body: "We name the pattern running your business, price it, and define the one decision that changes the next thirty days.",
+      includes: ["Private 90-minute session, live, 1:1", "Intake read personally", "Written Truth Map and full recording"],
       cta: { label: "Begin The Truth Session · $666", href: site.truthSessionCheckout, external: true },
       note: "Instant booking · Secure checkout",
       featured: false,
@@ -258,16 +200,10 @@ export const invitation = {
       pre: "Queen Identity",
       price: "3 × $4,997",
       terms: "3-month private container",
-      body:
-        "Three months to rebuild the identity holding your pricing, positioning, client selection, visibility and capacity, and to make those decisions real while we work.",
-      includes: [
-        "Deep intake mapping identity, model, numbers and capacity",
-        "Private 1:1 sessions every two weeks",
-        "Telegram access Monday to Thursday",
-        "Repricing, client criteria and positioning, built in your own voice",
-      ],
+      body: "Three months to rebuild the identity behind your pricing, positioning, clients and capacity.",
+      includes: ["Private 1:1 sessions every two weeks", "Telegram access Monday to Thursday", "Repricing, client criteria and positioning"],
       cta: { label: "Apply for VIP Mentoring", href: "#apply", external: false },
-      note: "By application only. I hold a small number of private clients at a time and read every application myself.",
+      note: "By application only. I read every application myself.",
       featured: true,
     },
   ],
@@ -281,19 +217,19 @@ export const faq = {
   items: [
     {
       q: "I have already worked with mentors.",
-      a: "Then you already have the strategy. We change the identity making the decisions inside it: what you charge, who you accept, what you say publicly, what you refuse to carry.",
+      a: "Then you have the strategy. We change the identity making the decisions inside it.",
     },
     {
       q: "I do not have time for another long program.",
-      a: "There is no curriculum. We work in real time, on decisions you are already facing this month, while you run the business.",
+      a: "There is no curriculum. We work in real time on the decisions you are facing this month.",
     },
     {
       q: "What is the actual difference between the two tiers?",
-      a: "The Truth Session names the pattern, its cost, and one decision. VIP Mentoring is where that decision becomes a repriced offer, a selected client list, a defined capacity and a position you own.",
+      a: "The Truth Session names the pattern and one decision. VIP Mentoring is where that decision becomes your offer, your client list and your position.",
     },
     {
       q: "What exactly will change in my business?",
-      a: "Your prices, your client criteria, your availability, your positioning and your rhythm. Those are the five places identity becomes revenue, and they are where we work.",
+      a: "Your prices, your client criteria, your availability, your positioning and your rhythm.",
     },
   ],
 };
@@ -302,24 +238,12 @@ export const about = {
   eyebrow: "The woman behind the work",
   titleA: "I do not build fast.",
   titleB: "I build for the next twenty years.",
-  body:
-    "Everything I mentor was built in my own body first, tested for years and refined through hundreds of women. Not theory. Ground you can stand on.",
+  body: "Everything I mentor was built in my own body first. Not theory. Ground you can stand on.",
   facts: [
     { k: "Format", v: "Private, 1:1, live" },
     { k: "Clients", v: "A small number at a time" },
     { k: "Method", v: "Identity → decisions → revenue" },
   ],
-};
-
-export const finale = {
-  eyebrow: "An Invitation",
-  title: "Build the business the next version of you would run.",
-  body:
-    "Higher prices. Fewer clients. Deeper work. A name that keeps speaking when you are not in the room.",
-  quoteA: "The Queen does not arrive in a hurry.",
-  quoteB: "She arrives the moment you stop starting over and finally stay.",
-  primary: { label: "Apply for VIP Mentoring", href: "#apply" },
-  secondary: { label: "The Truth Session · $666", href: site.truthSessionCheckout },
 };
 
 export type Question = {
@@ -335,8 +259,7 @@ export type Question = {
 export const application = {
   eyebrow: "Application",
   title: "Write to me.",
-  body:
-    "I read every application myself. If your model, your moment and my room match, I will write to you personally with the next step.",
+  body: "I read every application myself. If your model, your moment and my room match, I will write to you personally.",
   meta: "7 questions · ~4 minutes",
   questions: [
     { key: "full_name", question: "What is your full name?", type: "input", placeholder: "Your name", min: 2, max: 100 },
@@ -401,6 +324,7 @@ export const application = {
 export const footer = {
   links: [
     { label: "About", href: "/#about" },
+    { label: "Apply", href: "/#apply" },
     { label: "Terms", href: "/terms" },
     { label: "Contact", href: `mailto:${site.email}` },
   ],

@@ -1,10 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { application as c, site } from "@/lib/content";
-import { Container, SectionHeader, headerGap } from "./Section";
-import desk from "@/public/images/marta-desk.jpg";
 
 type Values = Record<string, string>;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,7 +20,8 @@ function validate(index: number, values: Values): string | null {
   return null;
 }
 
-export default function ApplicationForm({ imageSrc }: { imageSrc: string | null }) {
+/** The seven-question application. One question at a time, Enter to continue. */
+export default function ApplicationForm() {
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
   const [values, setValues] = useState<Values>({});
@@ -34,7 +32,7 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
 
   const q = c.questions[step];
   const last = step === c.questions.length - 1;
-  const progress = ((step + 1) / c.questions.length) * 100;
+  const total = c.questions.length;
 
   useEffect(() => {
     if (started && !done) fieldRef.current?.focus();
@@ -44,8 +42,8 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
     const err = validate(step, values);
     if (err) return setError(err);
     setError(null);
-    setStep((s) => Math.min(s + 1, c.questions.length - 1));
-  }, [step, values]);
+    setStep((s) => Math.min(s + 1, total - 1));
+  }, [step, values, total]);
 
   const back = () => {
     setError(null);
@@ -53,7 +51,7 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
   };
 
   const submit = async () => {
-    for (let i = 0; i < c.questions.length; i++) {
+    for (let i = 0; i < total; i++) {
       const err = validate(i, values);
       if (err) {
         setStep(i);
@@ -87,158 +85,123 @@ export default function ApplicationForm({ imageSrc }: { imageSrc: string | null 
   };
 
   return (
-    <section id="apply" className="relative scroll-mt-24 overflow-hidden bg-ink-950 py-16 md:py-20">
-      <div className="absolute inset-x-0 top-0 gold-rule" />
-      <div className="absolute right-[-20%] top-[-10%] -z-0 h-[40rem] w-[40rem] rounded-full glow-gold blur-3xl opacity-60" />
-      <Container className="relative">
-        <SectionHeader
-          eyebrow={c.eyebrow}
-          title={
-            <>
-              Write to <span className="italic text-gold">me.</span>
-            </>
-          }
-          body={c.body}
-        />
-
-        <div className={headerGap}>
-            <div className="card-luxe relative grid overflow-hidden md:min-h-[28rem] md:grid-cols-[minmax(0,16rem)_1fr] lg:grid-cols-[minmax(0,20rem)_1fr]" data-reveal>
-              <div className="relative hidden md:block">
-                {imageSrc ? (
-                  <Image src={imageSrc} alt="Marta Szkudlarek" fill sizes="(max-width: 1024px) 30vw, 18vw" className="object-cover object-top" />
-                ) : (
-                  <Image src={desk} alt="Marta Szkudlarek" fill placeholder="blur" sizes="(max-width: 1024px) 30vw, 18vw" className="object-cover object-top" />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/20 to-transparent" />
-                <div className="absolute inset-y-0 right-0 w-px bg-line" />
-                <p className="absolute bottom-6 left-6 right-6 font-display text-lg italic leading-tight text-bone">
-                  “I am not collecting information. I am connecting patterns.”
-                </p>
-              </div>
-              <div className="relative flex flex-col p-7 sm:p-10 md:p-12">
-              {done ? (
-                <div className="flex h-full flex-col items-center justify-center text-center" style={{ animation: "wordIn 1s var(--ease-luxe) both" }}>
-                  <span className="text-gold">✦</span>
-                  <p className="mt-6 font-display text-6xl font-light italic md:text-7xl">
-                    <span className="gold-text">{c.success.title}</span>
-                  </p>
-                  <p className="mx-auto mt-8 max-w-md text-lg leading-[1.85] text-bone-70">{c.success.body}</p>
-                  <p className="mt-8 font-display text-2xl italic text-gold">{c.success.sign}</p>
-                </div>
-              ) : !started ? (
-                <div className="flex h-full flex-col justify-between gap-10">
-                  <div>
-                    <p className="text-[0.62rem] uppercase tracking-[0.3em] text-bone-30">{c.meta}</p>
-                    <p className="mt-8 font-display text-3xl font-light leading-snug text-bone md:text-4xl">
-                      Seven questions. One woman reading.
-                    </p>
-                    <p className="mt-6 max-w-lg leading-[1.85] text-bone-70">
-                      Your name, your email, and five honest answers about what you are building, where it is going, why now, your revenue, and the transformation you are ready for.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <button type="button" onClick={() => setStarted(true)} className="btn btn-gold">
-                      Begin Application
-                    </button>
-                    <span className="text-[0.62rem] uppercase tracking-[0.28em] text-bone-30">Private &amp; confidential</span>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex h-full flex-col">
-                  <div className="flex items-center justify-between text-[0.62rem] uppercase tracking-[0.3em] text-bone-30">
-                    <span>
-                      Question <span className="text-gold">{String(step + 1).padStart(2, "0")}</span> / {String(c.questions.length).padStart(2, "0")}
-                    </span>
-                    <span>{Math.round(progress)}%</span>
-                  </div>
-                  <div className="mt-4 flex gap-1.5">
-                    {c.questions.map((item, i) => (
-                      <span
-                        key={item.key}
-                        className={`h-px flex-1 transition-colors duration-700 ${i <= step ? "bg-gold" : "bg-line-strong"}`}
-                      />
-                    ))}
-                  </div>
-
-                  <div key={q.key} className="flex-1" style={{ animation: "wordIn 0.8s var(--ease-luxe) both" }}>
-                    <label htmlFor={q.key} className="mt-12 block font-display text-3xl font-light leading-tight text-bone md:text-4xl">
-                      {q.question}
-                    </label>
-                    {q.hint && <p className="mt-3 text-[0.92rem] italic text-bone-50">{q.hint}</p>}
-
-                    <div className="mt-8">
-                      {q.type === "textarea" ? (
-                        <textarea
-                          ref={(el) => {
-                            fieldRef.current = el;
-                          }}
-                          id={q.key}
-                          name={q.key}
-                          rows={1}
-                          className="field"
-                          placeholder={q.placeholder ?? "Write freely…"}
-                          value={values[q.key] ?? ""}
-                          maxLength={q.max}
-                          onChange={(e) => {
-                            setValues((v) => ({ ...v, [q.key]: e.target.value }));
-                            e.target.style.height = "auto";
-                            e.target.style.height = `${e.target.scrollHeight}px`;
-                          }}
-                          onKeyDown={onKey}
-                        />
-                      ) : (
-                        <input
-                          ref={(el) => {
-                            fieldRef.current = el;
-                          }}
-                          id={q.key}
-                          name={q.key}
-                          type={q.type === "email" ? "email" : "text"}
-                          autoComplete={q.type === "email" ? "email" : "name"}
-                          className="field"
-                          placeholder={q.placeholder}
-                          value={values[q.key] ?? ""}
-                          maxLength={q.max}
-                          onChange={(e) => setValues((v) => ({ ...v, [q.key]: e.target.value }))}
-                          onKeyDown={onKey}
-                        />
-                      )}
-                    </div>
-                    <div className="mt-4 min-h-6 text-sm text-gold-bright" role="alert" aria-live="polite">
-                      {error}
-                    </div>
-                  </div>
-
-                  <div className="mt-8 flex flex-col-reverse items-stretch justify-between gap-4 sm:flex-row sm:items-center">
-                    <button
-                      type="button"
-                      onClick={back}
-                      disabled={step === 0 || busy}
-                      className="text-left text-[0.68rem] uppercase tracking-[0.28em] text-bone-50 transition-colors hover:text-bone disabled:opacity-0"
-                    >
-                      ← Back
-                    </button>
-                    <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-6">
-                      <span className="hidden text-[0.62rem] uppercase tracking-[0.24em] text-bone-30 sm:block">
-                        {q.type === "textarea" ? "⌘ + Enter" : "Enter ↵"}
-                      </span>
-                      {last ? (
-                        <button type="button" onClick={submit} disabled={busy} className="btn btn-gold disabled:opacity-60">
-                          {busy ? "Sending…" : "Submit Application"}
-                        </button>
-                      ) : (
-                        <button type="button" onClick={next} className="btn btn-ghost">
-                          Continue
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-              </div>
-            </div>
+    <div className="flex min-h-[26rem] flex-col border-t border-gold/25 pt-10">
+      {done ? (
+        <div className="step-in flex flex-1 flex-col justify-center">
+          <p className="display-lg italic text-bone">{c.success.title}</p>
+          <p className="prose-body mt-8">{c.success.body}</p>
+          <p className="mt-8 font-display text-2xl font-light italic text-gold">{c.success.sign}</p>
         </div>
-      </Container>
-    </section>
+      ) : !started ? (
+        <div className="flex flex-1 flex-col justify-between gap-12">
+          <div>
+            <p className="font-display text-3xl font-light leading-snug text-bone md:text-4xl">
+              Seven questions. One woman reading.
+            </p>
+            <p className="prose-body mt-6">
+              Your name, your email, and five honest answers about what you are building, where it is going, why
+              now, your revenue, and the transformation you are ready for.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+            <button type="button" onClick={() => setStarted(true)} className="btn btn-gold">
+              Begin the application
+            </button>
+            <span className="caption">Private &amp; confidential</span>
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-1 flex-col">
+          <span className="caption">
+            Question <span className="text-gold">{step + 1}</span> of {total}
+          </span>
+          <div className="mt-4 flex gap-1.5" aria-hidden>
+            {c.questions.map((item, i) => (
+              <span
+                key={item.key}
+                className={`h-px flex-1 transition-colors duration-700 ${i <= step ? "bg-gold" : "bg-line-strong"}`}
+              />
+            ))}
+          </div>
+
+          <div key={q.key} className="step-in flex-1">
+            <label
+              htmlFor={q.key}
+              className="mt-12 block font-display text-3xl font-light leading-tight text-bone md:text-4xl"
+            >
+              {q.question}
+            </label>
+            {q.hint && <p className="mt-3 text-[1rem] italic text-bone-50">{q.hint}</p>}
+
+            <div className="mt-8">
+              {q.type === "textarea" ? (
+                <textarea
+                  ref={(el) => {
+                    fieldRef.current = el;
+                  }}
+                  id={q.key}
+                  name={q.key}
+                  rows={1}
+                  className="field"
+                  placeholder={q.placeholder ?? "Write freely…"}
+                  value={values[q.key] ?? ""}
+                  maxLength={q.max}
+                  onChange={(e) => {
+                    setValues((v) => ({ ...v, [q.key]: e.target.value }));
+                    e.target.style.height = "auto";
+                    e.target.style.height = `${e.target.scrollHeight}px`;
+                  }}
+                  onKeyDown={onKey}
+                />
+              ) : (
+                <input
+                  ref={(el) => {
+                    fieldRef.current = el;
+                  }}
+                  id={q.key}
+                  name={q.key}
+                  type={q.type === "email" ? "email" : "text"}
+                  autoComplete={q.type === "email" ? "email" : "name"}
+                  className="field"
+                  placeholder={q.placeholder}
+                  value={values[q.key] ?? ""}
+                  maxLength={q.max}
+                  onChange={(e) => setValues((v) => ({ ...v, [q.key]: e.target.value }))}
+                  onKeyDown={onKey}
+                />
+              )}
+            </div>
+            <div className="mt-4 min-h-6 text-[0.9rem] text-gold-bright" role="alert" aria-live="polite">
+              {error}
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col-reverse items-stretch justify-between gap-5 sm:flex-row sm:items-center">
+            <button
+              type="button"
+              onClick={back}
+              disabled={step === 0 || busy}
+              className="caption text-left transition-colors hover:text-bone disabled:opacity-0"
+            >
+              Back
+            </button>
+            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <span className="caption hidden sm:block">
+                {q.type === "textarea" ? "Ctrl + Enter to continue" : "Enter to continue"}
+              </span>
+              {last ? (
+                <button type="button" onClick={submit} disabled={busy} className="btn btn-gold">
+                  {busy ? "Sending…" : "Submit application"}
+                </button>
+              ) : (
+                <button type="button" onClick={next} className="btn btn-ghost">
+                  Continue
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
