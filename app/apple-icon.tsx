@@ -6,7 +6,7 @@ export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
 export default async function AppleIcon() {
-  const font = await readFile(join(process.cwd(), "app", "fonts", "CormorantGaramond-LightItalic.woff"));
+  const font = await readFile(join(process.cwd(), "app", "fonts", "InstrumentSerif-Italic.ttf"));
   return new ImageResponse(
     (
       <div
@@ -16,16 +16,17 @@ export default async function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "radial-gradient(circle at 30% 20%, #1a1816, #0b0a09 70%)",
-          color: "#e9cf96",
-          fontFamily: "Cormorant",
-          fontSize: 132,
+          background: "#6b1428",
+          color: "#fbf3f1",
+          fontFamily: "Instrument",
+          fontStyle: "italic",
+          fontSize: 96,
           lineHeight: 1,
         }}
       >
-        <span style={{ marginTop: -14 }}>M</span>
+        <span style={{ marginTop: -8 }}>ME</span>
       </div>
     ),
-    { ...size, fonts: [{ name: "Cormorant", data: font, weight: 300, style: "italic" }] },
+    { ...size, fonts: [{ name: "Instrument", data: font, weight: 400, style: "italic" }] },
   );
 }

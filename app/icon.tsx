@@ -6,7 +6,7 @@ export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
 export default async function Icon() {
-  const font = await readFile(join(process.cwd(), "app", "fonts", "CormorantGaramond-LightItalic.woff"));
+  const font = await readFile(join(process.cwd(), "app", "fonts", "InstrumentSerif-Italic.ttf"));
   return new ImageResponse(
     (
       <div
@@ -16,18 +16,17 @@ export default async function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0b0a09",
-          borderRadius: 14,
-          border: "1px solid rgba(207,174,116,0.5)",
-          color: "#e9cf96",
-          fontFamily: "Cormorant",
-          fontSize: 48,
+          background: "#6b1428",
+          color: "#fbf3f1",
+          fontFamily: "Instrument",
+          fontStyle: "italic",
+          fontSize: 50,
           lineHeight: 1,
         }}
       >
-        <span style={{ marginTop: -6 }}>M</span>
+        <span style={{ marginTop: -4 }}>M</span>
       </div>
     ),
-    { ...size, fonts: [{ name: "Cormorant", data: font, weight: 300, style: "italic" }] },
+    { ...size, fonts: [{ name: "Instrument", data: font, weight: 400, style: "italic" }] },
   );
 }

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { application as c, site } from "@/lib/content";
-import { Diamond } from "./Ornaments";
 
 type Values = Record<string, string>;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -135,39 +134,39 @@ export default function ApplicationForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex min-h-[26rem] flex-col border-t border-gold/25 pt-10">
+    <form onSubmit={onSubmit} noValidate className={`flex flex-col border-t border-ink pt-10 ${started ? "min-h-[26rem]" : ""}`}>
       {done ? (
         <div className="step-in flex flex-1 flex-col justify-center" role="status">
-          <p className="display-lg italic text-bone">{c.success.title}</p>
-          <p className="prose-body mt-8">{c.success.body}</p>
-          <p className="mt-8 font-display text-2xl italic text-gold">{c.success.sign}</p>
+          <p className="display-lg em">{c.success.title}</p>
+          <p className="body mt-8">{c.success.body}</p>
+          <p className="mt-8 font-display text-2xl italic text-burgundy">{c.success.sign}</p>
         </div>
       ) : !started ? (
         <div className="flex flex-1 flex-col justify-between gap-10">
           <div>
-            <p className="font-display text-3xl leading-snug text-bone md:text-4xl">{c.intro.title}</p>
-            <p className="prose-body mt-6 hidden md:block">{c.intro.body}</p>
+            <p className="font-display text-3xl leading-snug text-ink md:text-4xl">{c.intro.title}</p>
+            <p className="body mt-6 hidden md:block">{c.intro.body}</p>
           </div>
           <div>
             <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-              <button type="button" onClick={() => setStarted(true)} className="btn btn-gold">
+              <button type="button" onClick={() => setStarted(true)} className="btn btn-primary">
                 {c.intro.cta}
               </button>
-              <span className="caption">{c.intro.aside}</span>
+              <span className="label">{c.intro.aside}</span>
             </div>
-            <p className="mt-5 text-[0.95rem] text-bone-50">{c.intro.reassurance}</p>
+            <p className="mt-5 text-[0.95rem] text-ink-55">{c.intro.reassurance}</p>
           </div>
         </div>
       ) : (
         <div className="flex flex-1 flex-col">
-          <span className="caption">
+          <span className="label">
             {reviewing ? (
               <>
-                <span className="text-gold">Review</span> before sending
+                <span className="text-burgundy">Review</span> before sending
               </>
             ) : (
               <>
-                Question <span className="text-gold">{step + 1}</span> of {total}
+                Question <span className="text-burgundy">{step + 1}</span> of {total}
               </>
             )}
           </span>
@@ -175,21 +174,21 @@ export default function ApplicationForm() {
             {c.questions.map((item, i) => (
               <span
                 key={item.key}
-                className={`h-px flex-1 transition-colors duration-700 ${i <= step ? "bg-gold" : "bg-line-strong"}`}
+                className={`h-0.5 flex-1 transition-colors duration-700 ${i <= step ? "bg-burgundy" : "bg-rule-strong"}`}
               />
             ))}
           </div>
 
           {reviewing ? (
             <div className="step-in flex-1">
-              <p className="mt-12 font-display text-3xl leading-tight text-bone md:text-4xl">{c.review.title}</p>
-              <p className="mt-3 text-[1rem] italic text-bone-50">{c.review.hint}</p>
-              <dl className="mt-8 border-t border-gold/20">
+              <p className="mt-12 font-display text-3xl leading-tight text-ink md:text-4xl">{c.review.title}</p>
+              <p className="mt-3 text-[1rem] italic text-ink-55">{c.review.hint}</p>
+              <dl className="mt-8 border-t border-rule-strong">
                 {c.questions.map((item, i) => (
-                  <div key={item.key} className="grid gap-x-8 gap-y-2 border-b border-gold/15 py-4 sm:grid-cols-[1fr_auto]">
+                  <div key={item.key} className="grid gap-x-8 gap-y-2 border-b border-rule py-4 sm:grid-cols-[1fr_auto]">
                     <div className="min-w-0">
-                      <dt className="caption">{item.question}</dt>
-                      <dd className="mt-1.5 whitespace-pre-line break-words text-[1rem] leading-[1.7] text-bone">
+                      <dt className="label">{item.question}</dt>
+                      <dd className="mt-1.5 whitespace-pre-line break-words text-[1rem] leading-[1.7] text-ink">
                         {values[item.key]}
                       </dd>
                     </div>
@@ -206,17 +205,17 @@ export default function ApplicationForm() {
                   </div>
                 ))}
               </dl>
-              <p className="mt-6 text-[0.95rem] text-bone-50">
+              <p className="mt-6 text-[0.95rem] text-ink-55">
                 {c.review.legal}{" "}
-                <Link href="/terms" className="text-bone-70 underline decoration-gold/50 underline-offset-4 transition-colors hover:text-bone">
+                <Link href="/terms" className="text-ink-70 underline decoration-burgundy/50 underline-offset-4 transition-colors hover:text-burgundy">
                   Terms
                 </Link>
                 .
               </p>
               <div className="mt-4 min-h-6" role="alert" aria-live="polite">
                 {error && (
-                  <span className="flex items-baseline gap-3 text-[0.95rem] text-bone">
-                    <Diamond className="relative top-[-1px] h-1.5 w-1.5 fill-gold-bright" />
+                  <span className="flex items-baseline gap-3 text-[0.95rem] text-ink">
+                    <span aria-hidden className="relative top-[-1px] block h-1.5 w-1.5 shrink-0 bg-burgundy" />
                     {error}
                   </span>
                 )}
@@ -224,10 +223,10 @@ export default function ApplicationForm() {
             </div>
           ) : (
             <div key={q.key} className="step-in flex-1">
-              <label htmlFor={q.key} className="mt-12 block font-display text-3xl leading-tight text-bone md:text-4xl">
+              <label htmlFor={q.key} className="mt-12 block font-display text-3xl leading-tight text-ink md:text-4xl">
                 {q.question}
               </label>
-              {q.hint && <p className="mt-3 text-[1rem] italic text-bone-50">{q.hint}</p>}
+              {q.hint && <p className="mt-3 text-[1rem] italic text-ink-55">{q.hint}</p>}
 
               <div className="mt-8">
                 {q.type === "textarea" ? (
@@ -275,8 +274,8 @@ export default function ApplicationForm() {
               </div>
               <div id={`${q.key}-error`} className="mt-4 min-h-6" role="alert" aria-live="polite">
                 {error && (
-                  <span className="flex items-baseline gap-3 text-[0.95rem] text-bone">
-                    <Diamond className="relative top-[-1px] h-1.5 w-1.5 fill-gold-bright" />
+                  <span className="flex items-baseline gap-3 text-[0.95rem] text-ink">
+                    <span aria-hidden className="relative top-[-1px] block h-1.5 w-1.5 shrink-0 bg-burgundy" />
                     {error}
                   </span>
                 )}
@@ -289,22 +288,22 @@ export default function ApplicationForm() {
               type="button"
               onClick={back}
               disabled={step === 0 || busy}
-              className="caption text-left transition-colors hover:text-bone disabled:invisible"
+              className="label text-left transition-colors hover:text-burgundy disabled:invisible"
             >
               Back
             </button>
             <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-6">
               {!reviewing && (
-                <span className="caption hidden sm:block">
+                <span className="label hidden sm:block">
                   {q.type === "textarea" ? "Ctrl + Enter to continue" : "Enter to continue"}
                 </span>
               )}
               {reviewing ? (
-                <button ref={sendRef} type="submit" disabled={busy} className="btn btn-gold">
+                <button ref={sendRef} type="submit" disabled={busy} className="btn btn-primary">
                   {busy ? "Sending…" : c.review.cta}
                 </button>
               ) : (
-                <button type="submit" className={`btn ${step === total - 1 ? "btn-gold" : "btn-ghost"}`}>
+                <button type="submit" className={`btn ${step === total - 1 ? "btn-primary" : "btn-outline"}`}>
                   {step === total - 1 ? "Review my answers" : "Continue"}
                 </button>
               )}

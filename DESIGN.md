@@ -1,344 +1,530 @@
 ---
 name: Marta Empire
-description: Warm boutique elegance on black velvet. Champagne gold as frame, numeral and rule; a Garamond voice; Manrope for the small print.
+description: A modern couture house on warm white paper. One burgundy, used like a stone; Instrument Serif for the voice, Geist for the work; a hairline grid on the layout's own twelve columns.
 colors:
-  ink-950: "#070605"
-  ink-900: "#0b0a09"
-  ink-800: "#15120f"
-  ink-700: "#1f1a16"
-  bone: "#f3ecdf"
-  bone-70: "rgba(243, 236, 223, 0.74)"
-  bone-50: "rgba(243, 236, 223, 0.56)"
-  bone-30: "rgba(243, 236, 223, 0.36)"
-  line: "rgba(243, 236, 223, 0.12)"
-  line-strong: "rgba(243, 236, 223, 0.28)"
-  gold: "#cfae74"
-  gold-bright: "#e9cf96"
-  gold-deep: "#9a7b45"
-  gold-line: "rgba(207, 174, 116, 0.45)"
-  gold-faint: "rgba(207, 174, 116, 0.18)"
+  paper: "#fbf9f7"
+  paper-2: "#f3eeea"
+  paper-3: "#ebe4de"
+  ink: "#1c1517"
+  ink-70: "rgba(28, 21, 23, 0.74)"
+  ink-55: "rgba(28, 21, 23, 0.6)"
+  ink-40: "rgba(28, 21, 23, 0.44)"
+  rule: "rgba(28, 21, 23, 0.12)"
+  rule-faint: "rgba(28, 21, 23, 0.06)"
+  rule-strong: "rgba(28, 21, 23, 0.24)"
+  burgundy: "#6b1428"
+  burgundy-deep: "#4a0d1b"
+  on-burgundy: "#fbf3f1"
+  on-burgundy-70: "rgba(251, 243, 241, 0.76)"
+  on-burgundy-rule: "rgba(251, 243, 241, 0.22)"
+  on-burgundy-faint: "rgba(251, 243, 241, 0.1)"
 typography:
-  display-xl:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(3.9rem, 9.2vw, 6rem)"
-    fontWeight: 600
-    lineHeight: 0.94
-    letterSpacing: "-0.01em"
-  display-lg:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(2.8rem, 5.2vw, 4.6rem)"
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.005em"
-  display-md:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(2.2rem, 3.5vw, 3.15rem)"
-    fontWeight: 600
-    lineHeight: 1.08
-  display-sm:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(1.65rem, 2.3vw, 2.05rem)"
-    fontWeight: 600
-    lineHeight: 1.18
-  lead:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(1.45rem, 2.05vw, 1.8rem)"
-    fontWeight: 500
-    lineHeight: 1.3
-    fontStyle: italic
-  title:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(1.5rem, 2vw, 1.9rem)"
-    fontWeight: 500
-    lineHeight: 1.25
-  body:
-    fontFamily: "Manrope, system-ui, sans-serif"
-    fontSize: "1.0625rem"
+  display-hero:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "clamp(4.2rem, 11.5vw, 10rem)"
     fontWeight: 400
-    lineHeight: 1.8
-  body-sm:
-    fontFamily: "Manrope, system-ui, sans-serif"
-    fontSize: "0.95rem"
+    lineHeight: 0.9
+    letterSpacing: "-0.03em"
+  display-xl:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "clamp(3.4rem, 7.6vw, 6rem)"
+    fontWeight: 400
+    lineHeight: 0.9
+    letterSpacing: "-0.03em"
+  display-lg:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "clamp(2.7rem, 5.6vw, 5.25rem)"
+    fontWeight: 400
+    lineHeight: 0.98
+    letterSpacing: "-0.02em"
+  display-md:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "clamp(2.1rem, 3.6vw, 3.4rem)"
+    fontWeight: 400
+    lineHeight: 1.04
+    letterSpacing: "-0.02em"
+  display-sm:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "clamp(1.6rem, 2.3vw, 2.15rem)"
+    fontWeight: 400
+    lineHeight: 1.12
+    letterSpacing: "-0.01em"
+  numeral-ghost-wide:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "9rem"
+    fontWeight: 400
+    lineHeight: 1
+  numeral-ghost:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "7rem"
+    fontWeight: 400
+    lineHeight: 1
+  price-entry-wide:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "6rem"
+    fontWeight: 400
+    lineHeight: 1
+  price-container-wide:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "4.6rem"
+    fontWeight: 400
+    lineHeight: 1
+  price-entry:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "4.5rem"
+    fontWeight: 400
+    lineHeight: 1
+  price:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "3.6rem"
+    fontWeight: 400
+    lineHeight: 1
+  price-sm:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "3rem"
+    fontWeight: 400
+    lineHeight: 1
+  monogram-wide:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "2.8rem"
+    fontWeight: 400
+    fontStyle: italic
+    lineHeight: 1
+  wordmark-lg:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "2.6rem"
+    fontWeight: 400
+    lineHeight: 1
+  monogram:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "2rem"
+    fontWeight: 400
+    fontStyle: italic
+    lineHeight: 1
+  menu-item:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "2.4rem"
+    fontWeight: 400
+    lineHeight: 1
+  list-title-wide:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "2.2rem"
+    fontWeight: 400
+    lineHeight: 1
+  row-title-wide:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "2rem"
+    fontWeight: 400
+    lineHeight: 1.1
+  item-title:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.9rem"
+    fontWeight: 400
+    lineHeight: 1.18
+  row-title:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.7rem"
+    fontWeight: 400
+    lineHeight: 1.1
+  item-title-sm:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.65rem"
+    fontWeight: 400
+    lineHeight: 1.18
+  wordmark:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.6rem"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "-0.01em"
+  statement:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.55rem"
+    fontWeight: 400
+    lineHeight: 1.25
+  signature:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.5rem"
+    fontWeight: 400
+    lineHeight: 1.25
+  name:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.45rem"
+    fontWeight: 400
+    lineHeight: 1.2
+  topic:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.4rem"
+    fontWeight: 400
+    lineHeight: 1
+  step:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.35rem"
+    fontWeight: 400
+    lineHeight: 1
+  step-numeral:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.3rem"
+    fontWeight: 400
+    lineHeight: 1
+  index-sm:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.1rem"
+    fontWeight: 400
+    fontFeature: "\"tnum\", \"lnum\""
+  index-xs:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "1.05rem"
+    fontWeight: 400
+    fontFeature: "\"tnum\", \"lnum\""
+  field:
+    fontFamily: "Instrument Serif, Instrument, Georgia, serif"
+    fontSize: "clamp(1.5rem, 2.4vw, 2rem)"
+    fontWeight: 400
+    lineHeight: 1.3
+  lead:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "clamp(1.12rem, 1.4vw, 1.3rem)"
     fontWeight: 400
     lineHeight: 1.6
-  caption:
-    fontFamily: "Manrope, system-ui, sans-serif"
-    fontSize: "0.78rem"
-    fontWeight: 500
-    letterSpacing: "0.16em"
-    textTransform: uppercase
+  body-lg:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "1.08rem"
+    fontWeight: 400
+    lineHeight: 1.65
+  body:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.75
+  meta:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.98rem"
+    fontWeight: 400
+    lineHeight: 1.7
+  body-sm:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.95rem"
+    fontWeight: 400
+    lineHeight: 1.7
+  note:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.92rem"
+    fontWeight: 400
+    lineHeight: 1.6
+  tags:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.9rem"
+    fontWeight: 400
+  small:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.85rem"
+    fontWeight: 400
   control:
-    fontFamily: "Manrope, system-ui, sans-serif"
-    fontSize: "0.86rem"
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.82rem"
     fontWeight: 500
     lineHeight: 1.2
-    letterSpacing: "0.06em"
-    textTransform: uppercase
-  numeral:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontWeight: 600
-    fontStyle: italic
-  field:
-    fontFamily: "Cormorant Garamond, Cormorant, Georgia, serif"
-    fontSize: "clamp(1.4rem, 2.2vw, 1.85rem)"
+    letterSpacing: "0.08em"
+  skip-link:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.8rem"
     fontWeight: 500
+    letterSpacing: "0.08em"
+  label:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 500
+    letterSpacing: "0.14em"
 rounded:
   none: "0px"
-  arch: "999px 999px 6px 6px"
-  arch-offset: "999px 999px 10px 10px"
-  pill: "999px"
 spacing:
-  gutter-sm: "24px"
-  gutter-md: "40px"
-  gutter-lg: "64px"
-  container: "1360px"
-  section-sm: "112px"
-  section-lg: "160px"
-  heading-gap: "28px"
-  block-gap: "80px"
-  block-gap-lg: "112px"
-  row: "28px"
-  frame-offset: "12px"
-  frame-inset: "14px"
-  corner-inset: "10px"
-  corner-size: "18px"
+  container: "1440px"
+  gutter-sm: "20px"
+  gutter-md: "32px"
+  gutter-lg: "56px"
+  column-gap: "40px"
+  column-gap-sm: "20px"
+  header: "72px"
+  section-sm: "80px"
+  section-md: "112px"
+  section-lg: "128px"
+  field-section-sm: "96px"
+  field-section-lg: "128px"
+  hero-top-sm: "128px"
+  hero-top-lg: "160px"
+  block-gap: "56px"
+  heading-gap: "40px"
+  row: "16px"
 components:
-  button-gold:
-    backgroundColor: "{colors.gold}"
-    textColor: "{colors.ink-950}"
+  button-primary:
+    backgroundColor: "{colors.burgundy}"
+    textColor: "{colors.on-burgundy}"
     typography: "{typography.control}"
     rounded: "{rounded.none}"
-    padding: "16.8px 32px"
-  button-gold-hover:
-    backgroundColor: "{colors.gold-bright}"
-    textColor: "{colors.ink-950}"
-  button-ghost:
+    padding: "15.2px 28px"
+    height: "52px"
+  button-primary-hover:
+    backgroundColor: "{colors.burgundy-deep}"
+    textColor: "{colors.on-burgundy}"
+  button-outline:
     backgroundColor: "transparent"
-    textColor: "{colors.bone}"
+    textColor: "{colors.burgundy}"
     typography: "{typography.control}"
     rounded: "{rounded.none}"
-    padding: "16.8px 32px"
-  button-ghost-hover:
-    backgroundColor: "{colors.gold}"
-    textColor: "{colors.ink-950}"
-  button-nav:
-    backgroundColor: "{colors.gold}"
-    textColor: "{colors.ink-950}"
+    padding: "15.2px 28px"
+    height: "52px"
+  button-outline-hover:
+    backgroundColor: "{colors.burgundy}"
+    textColor: "{colors.on-burgundy}"
+  button-header:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.burgundy}"
     typography: "{typography.control}"
     rounded: "{rounded.none}"
     padding: "10px 20px"
-  link-underlined:
+  button-paper:
+    backgroundColor: "{colors.on-burgundy}"
+    textColor: "{colors.burgundy-deep}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
+    padding: "15.2px 28px"
+    height: "52px"
+  button-paper-hover:
+    backgroundColor: "{colors.paper-2}"
+    textColor: "{colors.burgundy-deep}"
+  button-outline-paper:
     backgroundColor: "transparent"
-    textColor: "{colors.bone}"
+    textColor: "{colors.on-burgundy}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
+    padding: "15.2px 28px"
+    height: "52px"
+  button-outline-paper-hover:
+    backgroundColor: "{colors.on-burgundy}"
+    textColor: "{colors.burgundy-deep}"
+  link:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
     typography: "{typography.control}"
     padding: "0 0 5.6px 0"
-  link-underlined-hover:
-    textColor: "{colors.gold-bright}"
+  link-hover:
+    textColor: "{colors.burgundy}"
   field:
     backgroundColor: "transparent"
-    textColor: "{colors.bone}"
+    textColor: "{colors.ink}"
     typography: "{typography.field}"
     rounded: "{rounded.none}"
-    padding: "14.4px 0"
-  panel:
-    backgroundColor: "{colors.ink-800}"
-    textColor: "{colors.bone}"
-    rounded: "{rounded.none}"
-    padding: "48px"
+    padding: "13.6px 0"
+  label:
+    textColor: "{colors.ink-55}"
+    typography: "{typography.label}"
+  index:
+    textColor: "{colors.burgundy}"
+    typography: "{typography.index-sm}"
   nav-link:
     backgroundColor: "transparent"
-    textColor: "{colors.bone-70}"
-    typography: "{typography.caption}"
-  nav-link-hover:
-    textColor: "{colors.bone}"
-  caption:
-    textColor: "{colors.bone-50}"
-    typography: "{typography.caption}"
-  numeral:
-    textColor: "{colors.gold}"
-    typography: "{typography.numeral}"
+    textColor: "{colors.ink-70}"
+    typography: "{typography.control}"
+    padding: "8px 0"
+  nav-link-active:
+    textColor: "{colors.burgundy}"
+  ruled-panel:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "48px"
+  tag:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink-70}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
+    padding: "6px 12px"
+  color-field:
+    backgroundColor: "{colors.burgundy}"
+    textColor: "{colors.on-burgundy}"
+    padding: "128px 0"
 ---
 
 # Design System: Marta Empire
 
 ## Overview
 
-**Creative North Star: "The Boutique House on Black Velvet"**
+**Creative North Star: "The Couture House on White Paper"**
 
-Marta Empire is a private, high-priced mentoring practice, and the site is built as the house it would occupy: a near-black interior that reads as velvet rather than flat pixels, one candle of warm light per room, and champagne gold used only where a jeweller would use it. Photographs hang in drawn gold frames with a second frame set 12px behind, chapters open on a rule-diamond-rule divider, decisions are counted in roman numerals, and the house seal (an ME monogram in a ring of lettering) signs the opening view. Nothing glows; the light is placed.
+Marta Empire is a private, high-priced mentoring practice, and variant 2 builds it as a modern couture house: warm white paper, near-black ink, and a single burgundy used the way a jeweller sets a stone. Burgundy appears on the primary button, the italic last phrase of a headline, the index numerals, the drawn marks, the short rule that draws across above a title, focus and selection, and one full-bleed colour field per page. Everything else is paper, ink and hairlines.
 
-Density is generous and editorial. Sections pad 64px to 96px top and bottom (128px to 192px between chapters), headings breathe on a 28px rhythm, and body copy never exceeds 58 characters. The voice is Cormorant Garamond (semibold for display, medium italic for leads, numerals and form fields; chosen over a hairline Didone so the serifs stay readable on black) set against a quiet Manrope for body and small uppercase captions. Layouts are layered, not spread: a portrait overlaps its frame, a facts card lays over a photograph's corner, a seal sits on the edge of the composition.
+The structure is architecture, not ornament. A hairline column grid is drawn behind every page hero and colour field on the layout's own twelve columns, so the lines the reader sees are the lines the content sits on. Corners are square, borders are 1px, lists are ruled, and photographs are cut clean to the column or the viewport edge with no frame, outline or shadow. Where there is no photograph, a burgundy monoline mark stands in: square-cut geometry on a 48-unit grid, one stroke, one mark per idea.
 
-Motion is a single drawing-on technique used everywhere: frames draw with a stroke, photographs unveil from a bottom clip while settling from 1.12 to 1, lines rise from masks, scroll reveals stagger at 110ms and replay on every pass, and everything eases on one expo curve. Inertia scrolling runs continuously on fine pointers, and a soft pool of gold light trails the platform cursor; reduced motion and coarse pointers keep state changes only. Confirmed rejections: the glowing-card coaching template and the bare lookbook of plain spreads.
+The type is a pairing of Instrument Serif (400, roman and italic) for everything the reader should hear (headlines, prices, index numerals, list titles, the wordmark, the form she writes into) and Geist for everything that works (body, labels, controls). Motion is one grammar: photographs wipe open downward while settling from 1.14 to 1, headline lines rise out of masks, a burgundy rule draws across the foot of each page hero, and rules and marks draw on inside each revealed block. Every scroll reveal replays in reverse when it leaves the viewport. Confirmed rejections: the black-and-gold boutique of variant 1 (frames, seals, glow, ticker) and the pastel coaching template.
 
 **Key Characteristics:**
-- Ink ground with still film grain and a faint satin weave; flat black is never shipped bare.
-- Gold is a material (frames, hairlines, numerals, diamonds, prices, one fill), never a wash or a gradient tint on type.
-- Cormorant Garamond carries every heading, lead, pull line, numeral and form field; Manrope carries body, captions and controls.
-- Ornament vocabulary is fixed: divider, diamond, corner marks, offset frame, roman numeral, seal, and engraved gold glyphs (emblems, flourish, radiance, crest) that draw themselves on when revealed.
-- One soft gold light per section, positioned on purpose; one imperative per view.
-- One gold action per page-level goal: gold always means the Truth Session (the Tier 01 entry); VIP Mentoring is the ghost action and is reached by application.
-- Zero radius except the arch; hairline borders, not cards.
-- One easing curve, long durations (0.6s to 2.4s), one entrance grammar.
+- Warm paper ground in two tones (paper and paper-2 bands); paper-3 only under photographs as their loading tone.
+- One burgundy, never tinted into a wash, never a gradient; one burgundy colour field per page.
+- Headlines split into an ink roman phrase and a burgundy italic last phrase.
+- A visible 12-column hairline grid at 6% ink, drawn on the container's own columns and gap.
+- Square corners everywhere; 1px rules; no shadows.
+- Photographs cut clean, no frames; printer's crop marks (two 14px burgundy hairlines off each corner, never touching the image) on section photographs; burgundy monoline marks where there is no photograph.
+- The Four women stories share three rows through CSS subgrid (who she was, the decision, what changed); a 40% burgundy line with an arrowhead runs through the decision row and each story's 10px square sits on it. At the foot of each column, a drawing of that decision (StoryDraft, 70% strength, bottom-aligned across the four): a week with two days hatched, one marked point in a field of points, many lines and one gate, nested squares with a capacity dimension.
+- Drafts: section-scale construction drawings (`components/Drafts.tsx`) in 1px burgundy hairline, paper on a burgundy field. Each is the idea of its section: the arch door framing the colour field's actions (xl only), one column carrying the whole entablature beside "Now it runs on you", four radii struck from the top-right corner of the Four women section (one centre, four directions; shown from 1024px), the arched window in the FAQ page hero (glazed and barred, casting light on the floor), the temple front in the pillars page hero (four columns under one entablature and pediment; all four pillar rows carry photographs), the square peg flush in its slot and the round peg resting on top under the two fit lists on services, the spirit level for fit. Forms draw on in sequence, dashed construction guides fade in after, one filled point lands last; reversible like every reveal.
+- One burgundy primary button per view; the header's Apply is an outline; outline buttons are burgundy line and text, filling burgundy on hover.
+- One easing curve for entrances and state, one wipe curve for photographs; reversible scroll reveals.
 
 ## Colors
 
-Black velvet in four steps of warm ink, bone for type at four opacities, and a three-step champagne gold with two translucent line weights.
+Warm paper and a warm near-black ink at four strengths, three ink hairline weights, and one burgundy with its deeper hover and its paper-on-burgundy counterparts.
 
 ### Primary
-- **Champagne Gold** (`gold`): the material of the house. Frames, corner marks, dividers, diamonds, numerals, prices, the filled primary button, focus rings, selection highlight, the cursor, the caret. Used on hairlines at 15% to 45% opacity and at full strength only on small elements or one button per view.
-- **Bright Champagne** (`gold-bright`): the italic second word of every headline ("Identity.", "Decision."), prices, the button sweep fill, hover text on links and footer items, the active numeral, and the inline error line under a form field. It is the highlight, never a surface.
-- **Deep Gold** (`gold-deep`): scrollbar thumb on hover. Reserved for pressed and secondary states; not used on type.
-- **Gold Line** (`gold-line`): the offset frame behind photographs and the ghost button border at rest.
-- **Gold Faint** (`gold-faint`): declared for the faintest gold fills; the build reaches it through Tailwind `gold/15` and `gold/20` on section borders, list rules and panel borders.
+- **Couture Burgundy** (`burgundy`): the stone. The primary button fill, the italic emphasised phrase (`.em`), index numerals, marks, the rule that draws above a title and across the foot of each page hero, active nav links and their underline, the field underline on focus, focus rings, text selection, the caret, the scrollbar thumb on hover, the application progress bar, the 6px square list bullets, prices, and the single full-bleed colour field. It is also the ground of the mobile menu sheet and the appointment page's left panel.
+- **Deep Burgundy** (`burgundy-deep`): the hover plane that wipes up from below inside the primary button, and the text colour of paper buttons on a burgundy field. Never used as a surface on its own.
 
 ### Neutral
-- **Ink 900** (`ink-900`): the page ground and theme colour. Every section sits on it unless it is a darker chapter.
-- **Ink 950** (`ink-950`): the darker chapter ground (Invitation, FAQ, Apply, Footer, the mobile menu at 97%), the ticker band at 60%, scrollbar track, and text on gold buttons.
-- **Ink 800 / Ink 700** (`ink-800`, `ink-700`): the panel gradient (ink-800 at 92% to ink-900 at 96%) and the scrollbar thumb. Never used as a card fill on their own.
-- **Bone** (`bone`): primary type, headline word one, ghost button text, link text, nav wordmark.
-- **Bone 70** (`bone-70`): body copy, leads, nav links, FAQ questions at rest, ticker mantras.
-- **Bone 50** (`bone-50`): captions, "before" column type, the not-for-her list, placeholders, footer small print, muted headline fragments.
-- **Bone 30** (`bone-30`): inactive tab numerals and tags, the not-for-her diamond.
-- **Line / Line Strong** (`line`, `line-strong`): bone hairlines at 12% and 28% for truths rows, mobile menu rows, the terms sidebar rule, the field underline at rest, and the link underline track.
+- **Paper** (`paper`): the page ground and theme colour; the ground under forms.
+- **Paper 2** (`paper-2`): alternate section bands (Where you are, About, the VIP section, even pillar rows), the footer, the ground inside mark panels, and the hover fill on the home offer rows.
+- **Paper 3** (`paper-3`): the resting tone behind a loading photograph and the scrollbar thumb. Never a section ground.
+- **Ink** (`ink`): headlines, primary text, the 1px border of ruled panels and the top rule of major lists.
+- **Ink 70** (`ink-70`): body copy, leads, secondary list text, nav links at rest.
+- **Ink 55** (`ink-55`): labels, meta lines under prices, notes, footer small print.
+- **Ink 40** (`ink-40`): placeholders (italic), the resting arrow on pillar rows, the hollow bullet of the not-for-her list.
+- **Rule / Rule Strong / Rule Faint** (`rule`, `rule-strong`, `rule-faint`): 12% for rows inside a list and section borders, 24% for the top and bottom of a list, the field underline at rest and the link track, 6% for the column grid only.
+- **On Burgundy** (`on-burgundy`, `on-burgundy-70`, `on-burgundy-rule`, `on-burgundy-faint`): type at full and 76%, rules at 22%, and grid lines at 10% on a burgundy field.
 
 ### Named Rules
-**The Gold-as-Material Rule.** Gold is applied only where a physical object would be gilded: a hairline, a frame, a numeral, a diamond, a price, one filled button. It is never a background wash, a gradient over type, or a glow behind a card. The only gold soft light is the `.light` pool, one per section, blurred 40px at 22% peak opacity.
+**The One Stone Rule.** Burgundy is applied only as a point: a fill on one button, one italic phrase, a numeral, a mark, a 1px or 2px rule, a 6px square. It is never a tint, a wash, a gradient, or a second accent hue.
 
-**The One Accent Rule.** Each view carries one filled gold element (the primary button) and one bright-gold word in its headline. Everything else in gold is a hairline or a small mark.
-
-**The Two-Ground Rule.** Chapters alternate between Ink 900 and Ink 950; a darker chapter is separated by a gold hairline at 15% and receives the satin weave. There are no third surface tones and no cards with their own fill except the offer panel.
+**The One Field Rule.** Each page carries at most one full-bleed burgundy colour field: the closing `ColorField` on home, services, pillars and FAQ, the left panel on appointment, none on terms. Inside it, type, rules and grid turn to paper, and the primary action becomes the paper button; a second action is the paper outline button at the same width (burgundy fill so the grid does not show through), labels left and arrows right on shared lines.
 
 ## Typography
 
-**Display Font:** Cormorant Garamond 400 to 700, roman and italic (with Cormorant, Georgia, serif)
-**Body Font:** Manrope 300 to 600 (with system-ui, sans-serif)
+**Display Font:** Instrument Serif 400, roman and italic (with Georgia, serif); loaded through `next/font` as `--font-instrument`, and self-hosted as `Instrument` from `app/fonts` for the icon, apple icon and Open Graph image.
+**Body Font:** Geist (with system-ui, sans-serif); loaded through `next/font` as `--font-geist`.
 
-**Character:** Cormorant Garamond at 600 gives the headlines crisp bracketed serifs and a long-tailed Q that still read cleanly on black at 6rem; the same face at 500, italic, carries leads, numerals, pull quotes and form fields with warmth. The hairline Didone it replaced was rejected as hard to read. Manrope is deliberately quiet: one weight (500) for uppercase captions and controls, regular for body, so the serif is the only voice in the room.
+**Character:** Instrument Serif is a condensed, high-contrast modern serif that stays readable at 10rem and carries a lively italic, so one weight does all the display work and emphasis comes from the italic and the burgundy. Geist is neutral and precise; it handles labels and controls in uppercase at 500 and body at 400, so the serif is the only voice with character.
 
 ### Hierarchy
-- **Display XL** (600, `clamp(3.9rem, 9.2vw, 6rem)`, 0.96, -0.01em): the hero only. Two words on two lines; the second word italic in Bright Champagne.
-- **Display LG** (600, `clamp(2.8rem, 5.2vw, 4.6rem)`, 1.04, -0.005em): every chapter title via the shared Heading, and the application success title (italic).
-- **Display MD** (600, `clamp(2.2rem, 3.5vw, 3.15rem)`, 1.1): the /terms page title.
-- **Display SM** (600, `clamp(1.65rem, 2.3vw, 2.05rem)`, 1.2): declared and available; not yet placed in the build.
-- **Lead** (500 italic, `clamp(1.45rem, 2.05vw, 1.8rem)`, 1.3): the sentence under every chapter title and the hero subtitle. Max width 42rem.
-- **Title** (500, 1.5rem to 1.9rem, 1.25, Cormorant): item titles inside lists and grids: truths, mechanism areas, story headings, FAQ questions, pillar tabs, offer names (2.4rem to 3rem), facts values. Set in Tailwind size utilities on `font-display`, not a named class.
-- **Pull line** (Cormorant italic, 1.25rem to 1.9rem): the gold or bright-gold closing line of a block (pillar mantra, mechanism closer, mentor signature).
-- **Body** (400, 1.0625rem, 1.8): `.prose-body` for paragraphs, Bone 70, 58ch max. Secondary body at 0.95rem to 1rem, 1.6 to 1.8, with a 34ch to 50ch max inside grids.
-- **Caption** (500, 0.78rem, 0.16em, uppercase): labels, terms under a price, column heads, the hero credentials line, question counters, keyboard hints. Bone 50 by default, gold when it names an active state or a footer column.
-- **Control** (500, 0.86rem, 0.06em, uppercase): button and text-link labels.
-- **Numeral** (600 italic, gold): roman numerals I to VI beside truths, mechanism areas and stories at 1.5rem to 1.875rem; clause numerals on /terms at 1.125rem; zero-padded arabic numerals ("01") on pillar tabs and the mobile menu at 0.875rem to 1rem.
-- **Field** (500, `clamp(1.4rem, 2.2vw, 1.85rem)`): application inputs set in Cormorant with an italic Bone 50 placeholder.
+- **Display Hero** (400, `clamp(4.2rem, 11.5vw, 10rem)`, 0.9, -0.03em): the home headline only, "Queen" / "Identity.", set by the direction contract.
+- **Display XL** (400, `clamp(3.4rem, 7.6vw, 6rem)`, 0.9, -0.03em): every inner page hero headline and the appointment headline.
+- **Display LG** (400, `clamp(2.7rem, 5.6vw, 5.25rem)`, 0.98, -0.02em): section titles through `Title`, tier names and pillar titles beside their index, the colour field statement, the application success line.
+- **Display MD** (400, `clamp(2.1rem, 3.6vw, 3.4rem)`, 1.04): smaller section titles (Where you are, About), the home offer names, FAQ topic headings.
+- **Display SM** (400, `clamp(1.6rem, 2.3vw, 2.15rem)`, 1.12, -0.01em): terms section titles.
+- **Prices** (400, burgundy, line-height 1): the Truth Session at 4.5rem to 6rem, VIP at 3.6rem to 4.6rem, home offer rows at 3rem to 3.6rem.
+- **Serif titles and statements** (400): list and row titles at 1.65rem / 1.9rem (truths, accordion questions at 1.6rem / 1.9rem, pillar list at 1.9rem / 2.2rem), decision rows at 1.7rem / 2rem, fit column titles at 2rem, the pillar "who she becomes" statement at 1.55rem, story names at 1.45rem, FAQ topics at 1.4rem, appointment step titles and the pillar mantra (italic, burgundy) at 1.35rem, the italic signature at 1.5rem / 1.9rem, the mobile menu at 2.4rem, the italic ME monogram at 2rem / 2.8rem, the header wordmark at 1.6rem and the footer wordmark at 2.6rem. Intro and question prompts in the form use the Tailwind steps 1.875rem / 2.25rem, the success signature 1.5rem.
+- **Index** (400, tabular lining numerals, burgundy): inline with a heading at 1.6rem, in lists at 1.4rem, 1.1rem and 1.05rem, story numerals at 2.6rem, the appointment steps at 1.3rem.
+- **Ghost numeral** (400, burgundy at 15%, 7rem / 9rem): the pillar number set behind the Self Concept mark panel, decorative and hidden from assistive tech.
+- **Field** (400, `clamp(1.5rem, 2.4vw, 2rem)`, 1.3): application inputs and textareas; placeholder italic in Ink 40.
+- **Lead** (Geist 400, `clamp(1.12rem, 1.4vw, 1.3rem)`, 1.6, 44ch, Ink 70): the paragraph under a hero or section title.
+- **Body** (Geist 400, 1rem, 1.75, 60ch, Ink 70); **Body LG** 1.08rem / 1.65 on the burgundy appointment panel; **Meta** 0.98rem; **Body SM** 0.95rem / 1.7; **Note** 0.92rem; **Tags** 0.9rem; **Small** 0.85rem for the footer legal line and counts.
+- **Control** (Geist 500, 0.82rem, 0.08em, uppercase): buttons, text links, nav links, pillar tags.
+- **Label** (Geist 500, 0.75rem, 0.14em, uppercase, Ink 55): breadcrumbs, column heads inside a block ("What you receive"), definition terms, the form counter and keyboard hints. The skip link uses the same treatment at 0.8rem.
 
 ### Named Rules
-**The Second-Word Rule.** A chapter title splits into a roman first phrase in Bone and an italic last word or phrase in Bright Champagne. The split is the only colour change inside a headline; no gradient text, no tracked-out display.
+**The Split Headline Rule.** A headline is an ink roman phrase and a burgundy italic last phrase (`Title`, `PageHero`, `ColorField`), usually broken onto two lines. That split is the only colour change inside a headline: no gradient text, no tracked-out display.
 
-**The Serif-Only Voice Rule.** Anything the reader is meant to hear (headings, leads, list titles, mantras, prices, numerals, even the input she types into) is Cormorant. Manrope never rises above 1.0625rem and never carries a headline.
+**The Inline Index Rule.** No eyebrow or kicker sits above a heading. Where a sequence matters (tiers, pillars, FAQ topics, steps, clauses) its numeral sits inline on the heading's baseline, in burgundy Instrument Serif. Labels only head a column inside a block or name a definition; the breadcrumb on inner pages is navigation, not a kicker.
 
-**The Caption Floor Rule.** Manrope uppercase is never smaller than 0.78rem or tracked wider than 0.16em, and its lowest opacity is Bone 50. Bone 30 is reserved for inactive controls, not for readable copy.
+**The Serif Voice Rule.** Headlines, prices, numerals, list titles, statements, the wordmark and form fields are Instrument Serif at 400; Geist never carries a headline and never rises above the lead.
 
 ## Layout
 
-A single centred container of 1360px with gutters of 24px, 40px at 640px and 64px at 1024px. Sections are 112px tall on mobile and 160px from 768px (`py-28 md:py-40`); the hero is full-viewport (`min-h-svh`) with its own padding. Inside a section the chapter Heading is followed by a 80px gap to the first block, 112px from 1024px.
+One container: 1440px max with gutters of 20px, 32px from 640px and 56px from 1024px. At 1024px and up the layout is twelve columns with a 40px gap (`lg:grid-cols-12 lg:gap-10`); below that, content stacks and the drawn grid shows four columns at a 20px gap. `Gridlines` draws the same container, gutter and gap behind a section at 6% ink (10% paper on burgundy), with a line on every other column start plus the closing edge, so title columns (1, 7, 9) land on visible lines.
 
-The grid is twelve columns at 1024px and up, with 32px to 48px column gaps. Recurring splits: 6/6 (hero, About: voice left, composition right), 5/7 (Pillars: framed photo, tabs plus panel), 7/4 with the paragraph pushed to columns 9 to 12 (Mechanism: title, then a self-aligned closer), 4/7 with the right block starting at column 6 (FAQ, Apply, /terms: a sticky left aside at `top: 8rem`, content right). Lists are three columns (Mechanism areas) with gold hairlines between cells and no cell fills.
+Sections pad 80px, 112px from 768px and 128px from 1024px (`pad`); colour fields pad 96px and 128px. Page heroes start 128px (160px from 768px) from the top under a fixed 72px header, are at least 44rem tall on desktop, and end on a burgundy rule that draws across the full width. Section titles are followed by a 56px gap to their list; heading, lead and actions are 32px to 40px apart.
 
-Vertical rhythm inside blocks is 28px between a divider, title and lead; rows in lists are 28px to 32px tall padding on each side; offer panels use 32px padding on mobile and 48px from 768px. The mobile order puts the voice below the composition in the hero (`order-last lg:order-first`), photographs shrink to 76% to 82% of the column with a 420px to 520px cap, and the pillar tabs become a horizontally scrolling row.
+Recurring splits: 7 / 4 starting at column 9 (title left, body right), 5 / 6 starting at column 7 (photograph or mark, text), 4 or 3 / 8 starting at column 5 or 6 (sticky aside at `top: 7rem`, content right on FAQ, terms and the home questions). Hero photographs leave the grid: 40% of the viewport on home and 38% on inner pages, bleeding to the top, right and bottom edges. Pillar rows alternate sides and alternate paper / paper-2. The appointment page is a 5 / 7 split of the viewport itself: burgundy panel, then the form on paper at a 44rem measure.
 
-Fixed layers: the navigation at `z-50` (transparent, then 85% Ink 900 with a 12px blur and a gold 15% hairline after 24px of scroll), grain at `z-60`.
+Breakpoints: 640px, 768px, 1024px, 1280px (extra form padding only).
+
+### Named Rules
+**The Own Columns Rule.** The drawn grid is the layout grid: same container, same gutters, same twelve columns and 40px gap. Never draw decorative lines that content does not sit on, and align new blocks to column starts 1, 5, 7 or 9.
 
 ## Elevation & Depth
 
-Depth is tonal and material, not stacked. The two grounds (Ink 900 and Ink 950), the still grain overlay (5.5% soft-light fractal noise, fixed), the satin weave (an 8px diagonal repeat at 1.6% bone) and one blurred gold light per section make a flat black feel like fabric. Panels and photographs sit on hairlines rather than lifting off the page. Overlapping layers use a long, soft black drop shadow so the overlap reads as a physical object laid on top; that shadow is never applied to a panel sitting on its own.
-
-### Shadow Vocabulary
-- **Laid-over object** (`box-shadow: 0 40px 80px -30px rgba(0,0,0,0.9)`): the small bed portrait overlapping the hero composition, and the facts card overlapping the About portrait. Only for an element that physically overlaps a photograph.
-- **Featured panel glow** (`box-shadow: 0 40px 90px -40px rgba(207,174,116,0.35)`, hover `0 50px 100px -40px rgba(207,174,116,0.45)`): the VIP Mentoring panel only, alongside a 60% gold border and a 4px hover lift.
-- **Section light** (`.light`: radial gradient from `rgba(233,207,150,0.22)` through `rgba(207,174,116,0.07)` at 45% to transparent at 72%, `filter: blur(40px)`, sized 30rem to 50rem): the candle. One per section, placed off an edge or centred behind a chapter.
+The system is flat. There are no box shadows anywhere in the build. Depth comes from tone (paper against paper-2 bands, one burgundy field), from 1px ink rules, and from motion: photographs wipe open and settle, and large photographs drift 4% against the scroll. The only blur is the header's backdrop once scrolled (paper at 90% with a medium blur) so text stays legible over photographs.
 
 ### Named Rules
-**The One Candle Rule.** Each section carries exactly one `.light` pool (the hero carries two, one at 60%); it is placed with intent (behind the composition, off the top-right, centred under the offer panels) and never tiled or stacked.
-
-**The Hairline-Not-Card Rule.** Content groups are bounded by 1px lines at 12% bone or 15% to 25% gold, never by a filled or raised surface. The single exception is the offer panel.
+**The Ruled, Not Raised Rule.** Groups are bounded by rules, never lifted: a ruled list (24% ink top and bottom, 12% between rows), or a ruled panel (a 1px ink border on paper with 32px to 48px padding). No shadows, no filled cards, no coloured side borders thicker than 1px.
 
 ## Shapes
 
-Everything is square-cornered: buttons, panels, photographs, inputs, cards, nav. The one curved silhouette is the arch (`border-radius: 999px 999px 6px 6px` on the photograph, `999px 999px 10px 10px` on its offset frame) used for the hero mirror portrait. Circles appear only as the seal and the section light.
+Every corner is square (0px): buttons, panels, tags, the accordion toggle, photographs, the monogram, inputs. Borders are 1px; the only 2px line is the application progress segment. Bullets are 6px burgundy squares (hollow Ink 40 squares for the not-for-her list), and the truths list opens each cell with an 8px square. Marks are drawn with square caps and mitred joins on a 48-unit grid at a 1.25 stroke (0.3 on large marks so the drawn line stays near 1.25px on screen), with small filled squares as accents. The only curves are inside marks (arches, circles, the hourglass).
 
-Borders are 1px hairlines. A framed photograph carries a 1px gold outline at 35% on its edge, a second 1px gold-line frame inset -14px and translated 12px right and down (or left and down with `data-offset="left"`) that slides home and brightens on hover, and four 18px gold corner marks inset 10px (14px marks inset 8px on small cards). The drawn hero frame is an SVG rect with `stroke-opacity 0.6` and `pathLength 1`. Panels have a 1px gold border at 22% (60% when featured) with corner marks inset 12px. Rules end in a diamond (a 12-unit rotated square path) on the chapter divider: two 64px hairlines fading to gold 70% with a 10px diamond between. Diamond bullets are 6px to 8px and separate caption fragments and list items.
+### Named Rules
+**The Clean Cut Rule.** A photograph is a plain rectangle cut to its column or to the viewport edge: no frame, no offset frame, no corner marks, no outline, no rounded arch. Its only states are the wipe on entry, a 4% drift, and a 1.03 scale on hover.
 
 ## Components
 
-Refined and restrained: controls are typographic first, gold second, and every state change is a slow slide rather than a snap.
+Precise and quiet: controls are rectangles in uppercase Geist, and every state change is a plane or a line that runs in on the expo curve.
 
 ### Buttons
-- **Shape:** square, 1px border (`0px` radius); uppercase Manrope 500 at 0.86rem tracked 0.06em; padding 1.05rem by 2rem; `inline-flex` with a 0.75rem gap.
-- **Gold (primary):** Champagne Gold fill, Ink 950 text, gold border. Hover: a Bright Champagne plane sweeps in from the left over 0.7s on the expo curve. Active: 1px press. Disabled: 50% opacity.
-- **Ghost (secondary):** transparent, Bone text, Gold Line border. Hover: gold rises from the bottom over 0.7s, text flips to Ink 950 and the border goes full gold.
-- **Nav button:** the gold button compacted to 0.625rem by 1.25rem.
-- **Full-width variant:** inside offer panels the button spans the panel (`w-full`); featured gets gold, the other gets ghost.
-- **Focus:** a 1.5px gold outline offset 4px, global.
+- **Shape:** square (0px), `inline-flex` with a 0.75rem gap, min height 52px, padding 15.2px by 28px, Control type, a 16-unit drawn arrow that slides 4px right on hover (an up-right arrow and a screen-reader note for external Stripe links).
+- **Primary:** Couture Burgundy fill, On Burgundy text. Hover: a Deep Burgundy plane scales up from the bottom over 0.6s. Active: 1px press. Disabled: 55% opacity.
+- **Outline:** 1px ink border, ink text; hover fills ink from the bottom and the text turns paper. Used for the second tier (VIP on services), the form's Continue, and the header Apply (compacted to 10px by 20px on paper at 80%).
+- **Paper / Outline Paper:** the same two on a burgundy field: an On Burgundy fill with Deep Burgundy text (hover plane paper-2), and a 1px On Burgundy outline that fills On Burgundy.
+- **Focus:** a 1.5px burgundy outline offset 4px, paper-coloured on burgundy.
 
 ### Text Link
-- **Style:** uppercase control type in Bone with a 1px Line Strong underline 0.35rem below and a small drawn arrow (16-unit SVG, 1.25 stroke, 0.85em).
-- **Hover:** a gold underline scales in from the left over 0.6s, the text goes Bright Champagne, the arrow slides 4px right.
+- **Style:** Control type in ink over a permanent 1px Rule Strong track 5.6px below, with the drawn arrow.
+- **Hover:** a burgundy line scales in from the left over 0.6s, the text turns burgundy, the arrow slides 4px. On burgundy the track is 22% paper and the line paper. Inline prose links use a 50% burgundy underline offset 4px.
+
+### Chips (Tags)
+- **Style:** pillar tags as 1px Rule Strong boxes, 6px by 12px, 0.82rem Ink 70, sentence case; static, no selected state.
 
 ### Cards / Containers
-- **Offer panel:** square, gradient from Ink 800 at 92% to Ink 900 at 96%, 1px gold border at 22%, corner marks inset 12px, padding 32px (48px from 768px). Hover: border to gold 50% over 0.6s. Featured: border at 60%, the gold glow, a 4px lift on hover. Content: Cormorant name at 2.4rem to 3rem, Bright Champagne price at 2.4rem to 2.8rem beside a caption for terms, a gold-15% divided include list with diamond bullets, the button pinned to the bottom.
-- **Framed photograph:** the `Frame` primitive (offset frame, hairline outline, corner marks, `reveal-photo` unveil). Aspect 3/4 on portraits, 2/3 for the arched hero portrait. Optional `arch` drops the corner marks. The `drift-slow` wrapper adds a scroll-driven 3% vertical drift.
-- **Engraved glyph:** gold line art from `components/Emblems.tsx` in one 1.3-unit stroke on a 64-unit grid (scales, key, compass, crown, velvet rope, queen, hourglass, laurel, column, letter) plus three ornaments (flourish rule, radiance sun, lozenge crest with the ME monogram). Every stroke carries `pathLength=1`; inside a revealed block it draws on over 1.9s after a 0.3s delay and erases on exit. Placed top-right of each mechanism cell, offer panel and client story, under the FAQ heading (crest) and the fit heading (radiance), and above the application title (letter). A radiance backdrop behind the offers heading was removed because it touched the panels.
-- **Quote card:** 1px gold border at 25%, corner marks, 40px to 48px padding, Cormorant italic at 1.7rem to 2rem with a gold caption attribution.
-- **Facts card:** Ink 950 at 95% with a 4px backdrop blur, 1px gold border at 40%, corner marks, the laid-over shadow; caption/Cormorant definition pairs divided by gold 15% rules.
+- **Ruled panel:** 1px ink border on paper, 32px padding (48px from 768px), holding a label, a ruled list with square bullets, a numbered "after you book" list and the one primary button at full width (the Truth Session).
+- **Mark panel:** a 4 / 5 or square box with a 1px ink border on paper-2 and a large mark centred at half size (the Self Concept pillar, the FAQ hero aside).
+- **Offer rows (home):** two cells under a 1px ink top rule, divided by a Rule Strong line, each a whole link that washes to paper-2 on hover while a 48px square arrow box fills burgundy.
+- **Shadow strategy:** none (see Elevation & Depth).
 
 ### Inputs / Fields
-- **Style:** borderless except a 1px Line Strong bottom rule, transparent, Cormorant at `clamp(1.4rem, 2.2vw, 1.85rem)`, 0.9rem vertical padding, Bone text, italic Bone 50 placeholder. Textareas auto-grow with no resize handle.
-- **Focus:** the bottom rule turns gold over 0.4s; the global outline is suppressed on fields.
-- **Error:** a Bright Champagne 0.9rem line below the field in an `aria-live` region; no red.
-- **Progress:** a row of 1px segments, gold for answered and current, Line Strong for the rest; a caption counter "Question 3 of 7" with the number in gold.
-- **Question:** Cormorant 300 at 1.875rem to 2.25rem, hint in italic Bone 50.
+- **Style:** transparent, borderless except a 1px Rule Strong bottom rule, 13.6px vertical padding, Field type in ink, italic Ink 40 placeholder; textareas auto-grow with no resize handle.
+- **Focus:** the bottom rule turns burgundy over 0.4s; the outline is suppressed on fields only.
+- **Error:** an ink 0.95rem line in an `aria-live` region, led by a 6px burgundy square; no red.
+- **Progress:** seven 2px segments, burgundy through the current question, Rule Strong after; a label counter with the number in burgundy. One question at a time; Enter continues; a ruled review list with an Edit link per answer before sending.
 
 ### Navigation
-- **Bar:** fixed, transparent over the hero with 24px to 28px vertical padding; after 24px of scroll it compacts to 16px, takes Ink 900 at 85% with a 12px blur and a gold 15% bottom hairline, over 0.5s.
-- **Wordmark:** "Marta" roman, a 6px diamond, "Empire" italic, Cormorant 1.45rem in Bone.
-- **Links:** Manrope uppercase 0.8rem tracked 0.12em in Bone 70; hover to Bone with a gold underline scaling in from the left over 0.5s. Hidden below 1024px.
-- **Mobile:** a two-hairline toggle that crosses into an X; a full-screen Ink 950 at 97% sheet with one light, bottom-anchored Cormorant 2.1rem items each with a zero-padded gold numeral and a Line rule, staggered in at 60ms, then a gold Apply button and a ghost Terms button.
+- **Bar:** fixed, 72px, transparent over page heroes; after 16px of scroll it becomes paper at 90% with a blur and a 12% rule over 0.5s (solid paper on the appointment page, where the Apply button is hidden).
+- **Wordmark:** "Marta" roman, "Empire" italic, Instrument Serif 1.6rem.
+- **Links:** Control type in Ink 70; hover and the current page turn burgundy with a 1px burgundy underline scaled from the left over 0.5s. Hidden below 1024px.
+- **Mobile:** a two-hairline toggle that crosses into an X; a full-screen burgundy sheet that wipes down (clip-path, 0.7s), Instrument Serif 2.4rem items on 22% paper rules staggered 60ms, then the paper Apply button and the outline-paper Truth Session button.
 
-### Tabs (Pillars)
-- **Style:** a vertical list (horizontal scroll under 768px) of Cormorant 1.25rem to 1.6rem titles with a gold numeral and a caption tag, divided by Line hairlines. Active: gold bottom border, Bone title, Bright Champagne numeral, gold tag. Inactive: Bone 50 title, Bone 30 numeral. The panel re-enters with a 0.6s fade-up.
+### Accordion
+- **Style:** a ruled list (Rule Strong); Instrument Serif questions at 1.6rem / 1.9rem in ink, burgundy when open or hovered; a 28px square toggle with a hairline plus whose vertical collapses to a minus, filling burgundy when open. The answer animates its grid row 0fr to 1fr over 0.5s; one answer open at a time.
 
-### Accordion (FAQ)
-- **Style:** rows on gold 20% hairlines; Cormorant 1.5rem to 1.7rem question in Bone 70 (Bone when open); a 16px plus made of two 1px hairlines that rotates 45 degrees and turns gold when open. The answer grid-row animates 0fr to 1fr over 0.6s.
+### Colour Field
+The page's one burgundy block: full-bleed, the grid in 10% paper, a short paper rule that draws on, a Display LG split headline in paper, and the paper button with an optional paper text link, bottom-aligned in the last four columns.
 
-### Chapter Heading
-The house opener: divider, Display LG title with a bright-gold italic second phrase, optional italic lead, each staggered 90ms as a reveal. Centred at 56rem max, or left-aligned at 48rem with the leading hairline hidden.
+### Page Hero
+Breadcrumb (label type, the current page in burgundy), a Display XL split headline rising line by line in columns 1 to 7 (1 to 10 with no aside), the lead, optional actions, and either a photograph bled to the right edge or an aside in columns 9 to 12. A burgundy rule draws across the foot.
 
-### Divider, Diamond, Corners, Seal
-The fixed ornament set. Divider: rule, 10px diamond, rule. Diamond: a 6px to 8px gold bullet between caption fragments and before list items (Bone 30 in the not-for-her list). Corners: four L-marks. Seal: a 120-unit SVG with two 0.75 stroke rings at 55%, "MARTA EMPIRE · QUEEN IDENTITY" on a text path in Manrope, and an italic ME monogram; it rotates once every 48s in the hero.
-
-### Ticker
-A 24px-padded band on Ink 950 at 60% with gold 20% top and bottom hairlines; Cormorant italic mantras in Bone 70 at 1.25rem to 1.5rem separated by diamonds, moving left over 70s, paused on hover, with 160px ink fades at each end.
+### Marks
+Ten burgundy monoline marks (Steps, Arch, Target, Horizon, Container, Column, Mirror, Letter, Question, Hourglass) and the ME Monogram square. Each stroked element carries `pathLength=1` and draws on over 1.8s after 0.25s inside a revealed block; filled square accents fade in at 1.1s.
 
 ### Motion Grammar
-One easing, `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease-out-expo`), for every entrance, hover and state change. Entrances: `rise` (a line lifting out of an overflow mask, 1.3s), `fade-up` (16px, 1.1s), `unveil` (a clip from the bottom, 1.5s to 1.6s) paired with `settle` (scale 1.12 to 1, 2.1s to 2.4s), `draw` (stroke-dashoffset, 2s). Scroll reveals: each `.reveal` element is observed on its own; hidden it sits at opacity 0, 32px down and 5px blurred (`.reveal-card` cells: 56px down at scale 0.96), resolving over 1s to 1.2s. Elements that enter together are staggered 110ms apart in reading order by the script, and the state reverses when an element leaves the viewport so the entrance replays on the next pass. Engaged only when `html.js` is present so a failed script hides nothing. Scroll-driven: `parallax-bg` (-10% to 10% at 1.2 scale) on section backgrounds and `drift` / `drift-slow` (6% / 3%) on framed photographs, under `@supports (animation-timeline: view())`. Continuous: the seal (48s), the ticker (70s), Lenis inertia at lerp 0.085 with an 88px anchor offset. The cursor is the platform default; a 640px pool of gold light (screen blend, 20% at its centre) trails it at 8% per frame on fine pointers. Hover fills sweep over 0.6s to 0.7s; borders and colours cross over 0.4s to 0.6s. Reduced motion removes every animation and reveal and collapses hover transitions to 0.01s; coarse pointers get no Lenis.
+Two curves: `--ease-out-expo` `cubic-bezier(0.16, 1, 0.3, 1)` for entrances, hovers and state; `--ease-in-out-quart` `cubic-bezier(0.76, 0, 0.24, 1)` for the photograph wipe only. First view: headline lines `rise` from 105% (1.2s), paragraphs `fade-up` 18px (1s), the hero photograph wipes down (1.5s) while its image settles 1.14 to 1 (2.2s), the hero rule draws across (1.4s). Scroll: `.reveal` elements sit 28px down at opacity 0 (48px for `.reveal-card`) and resolve over 0.9s / 1.1s, staggered 100ms in reading order (max 8), and reverse when they leave; `[data-reveal]` wraps wipe their photographs (1.4s), draw their rules (1.4s after 0.2s) and marks. Continuous: Lenis inertia (lerp 0.085, anchors offset 88px, off for coarse pointers) and a scroll-driven 4% drift on large photographs. Reduced motion removes every animation and reveal and collapses button, link and photo transitions to 0.01s.
+
+### Named Rules
+**The One Primary Rule.** Each view carries one burgundy primary button. The second offer is an outline, the header Apply is an outline, the form's Continue is an outline until the last question, and a colour field uses the paper button.
+
+**The One Mark Per Idea Rule.** A mark stands for one idea (pricing, selection, positioning, visibility, capacity, structure, self concept, the letter, the question, time) and appears where there is no photograph. Never repeat a mark for a different idea, and never pair a mark with a photograph in the same block.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** open every chapter with the Heading primitive: divider, Display LG title with the last phrase in italic Bright Champagne, an italic lead.
-- **Do** hang every photograph in the Frame primitive (hairline outline, 12px offset gold frame, corner marks) inside a `[data-reveal]` so it unveils and drifts.
-- **Do** count with gold Cormorant italic numerals: roman for truths, mechanism areas, stories and clauses.
-- **Do** place exactly one `.light` pool per section and give darker chapters (Ink 950) the satin weave and a gold 15% top hairline.
-- **Do** bound lists with 1px hairlines (Line for neutral rows, gold at 15% to 25% for chapters) and separate inline fragments with a diamond.
-- **Do** keep body copy at 1.0625rem, line-height 1.8, Bone 70, 58ch; keep captions at 0.78rem, 0.16em, Bone 50 or gold.
-- **Do** run every transition on `--ease-out-expo` with the house durations (0.4s to 0.7s for state, 1s to 2.4s for entrances) and honour reduced motion.
-- **Do** ship one gold button and one underlined text link as the pair of actions in a view.
+- **Do** build every headline with `Title`, `PageHero` or `ColorField`: an ink roman phrase and a burgundy italic last phrase.
+- **Do** put a sequence numeral inline on the heading's baseline in burgundy Instrument Serif, and only where the order carries information.
+- **Do** place blocks on the twelve-column grid (column starts 1, 5, 7, 9; 40px gap) and draw `Gridlines` only on those same columns.
+- **Do** end each page with at most one burgundy colour field and switch its actions to the paper button and paper link.
+- **Do** bound groups with 1px rules: Rule Strong at the top and bottom of a list, Rule between rows, a 1px ink border for a panel; bullet with 6px burgundy squares.
+- **Do** cut photographs clean inside `.photo reveal-photo` within a `[data-reveal]` wrapper so they wipe and settle; bleed hero photographs to the viewport edge.
+- **Do** use a burgundy monoline mark from `components/Marks.tsx` where there is no photograph, one mark per idea.
+- **Do** run motion on `--ease-out-expo` (and `--ease-in-out-quart` for the wipe only), keep reveals reversible, and honour reduced motion.
 
 ### Don't:
-- **Don't** wash gold across a surface, a gradient over type, or a glow behind a card; gold is a hairline, a mark or a single fill.
-- **Don't** round corners; the arch on the hero portrait is the only curve, and circles belong to the seal and the light.
-- **Don't** put a drop shadow under a panel or photograph that is not physically overlapping another element; the laid-over shadow is for overlaps only.
-- **Don't** set a heading, price, numeral or field in Manrope, and don't let Manrope exceed 1.0625rem.
-- **Don't** set readable copy below 0.78rem, wider than 0.16em, or fainter than Bone 50.
-- **Don't** add a second candle, a second easing curve or a second entrance technique; the frame draw, unveil and rise are the whole vocabulary.
-- **Don't** introduce a third surface tone or a filled card; the offer panel is the only filled container.
-- **Don't** use glyph icons or icon packs; the only icons are the drawn arrow, the plus made of hairlines, the diamond and the seal.
+- **Don't** set an eyebrow or kicker label above a heading; the breadcrumb is the only text above a hero headline.
+- **Don't** ship a second burgundy primary button in a view, or a filled burgundy button in the header.
+- **Don't** add a second colour field, a burgundy wash, a gradient, or a second accent hue.
+- **Don't** frame, outline, round or shadow a photograph.
+- **Don't** use box shadows, filled cards, rounded corners, or coloured side borders thicker than 1px.
+- **Don't** set a headline, price or numeral in Geist, or a label in Instrument Serif.
+- **Don't** draw grid lines that content does not sit on.
+- **Don't** use glyph icons or an icon pack; the arrows, the plus, the squares and the marks are drawn SVG in one 1.25 stroke.

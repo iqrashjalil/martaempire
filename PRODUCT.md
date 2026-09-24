@@ -22,7 +22,7 @@ Identity work that lands in five business decisions: pricing, client selection, 
 
 ## Operating Context
 
-- Home page (with the application form as its last section) and `/terms`; the form posts to `/api/apply` and forwards to a webhook when `APPLICATIONS_WEBHOOK_URL` is set.
+- This `staging` branch holds variant 2, a multi-page site: home `/`, `/services` (both offers, Stripe checkout for the Truth Session), `/pillars` (the four pillars and six decisions), `/appointment` (the VIP application form), `/faq` and `/terms`. The form posts to `/api/apply` and forwards to a webhook when `APPLICATIONS_WEBHOOK_URL` is set. Variant 1 (black and gold, single page) lives on `main`.
 - The Truth Session is bought directly through Stripe checkout; VIP Mentoring is by application only, read personally by Marta.
 - Contact by email (`info@martaszkudlarek.pl`) and Instagram (`@martaempire`). Based in Poznań, Poland; clients worldwide.
 
@@ -35,12 +35,11 @@ Identity work that lands in five business decisions: pricing, client selection, 
 ## Brand Commitments
 
 - Name: Marta Empire. Mentor: Marta Szkudlarek.
-- Colour scheme is binding, confirmed by the user on 2026-09-23: near-black ground with champagne gold accents.
-- Typography chosen by the user on 2026-09-23: Cormorant Garamond for headlines (semibold display, medium italic leads) with a clean sans for body (Manrope). A hairline Didone (Bodoni Moda) was tried the same day and rejected as hard to read. The OG image and favicon (`app/opengraph-image.tsx`, `app/icon.tsx`, `app/apple-icon.tsx`) use the self-hosted Cormorant Garamond Light files in `app/fonts`, the same family at a lighter weight.
-- Graphics requested by the user on 2026-09-23: every section without a photograph carries engraved gold line art (`components/Emblems.tsx`), and each of the six mechanism decisions has its own emblem.
-- Critique fixes on 2026-09-24 (user asked for every finding fixed): the Truth Session is the primary action everywhere (hero and mobile menu link straight to the Stripe payment link, its panel is featured and gold, VIP is ghost); the four client stories returned as a compact two-line strip with emblems; the for-her / not-for-her list ships; the six decisions carry one line each; the pillar panel shows what she does; the application is a real form with a review step, session-storage recovery and a Terms line; section padding was tightened at the user's request; the mechanism closing line was removed at the user's request.
-- Copy added on 2026-09-24 that the mentor should confirm: the FAQ answer describing what follows a Truth Session booking (receipt, intake by email, session time), and "applying commits you to nothing".
-- Style direction chosen by the user on 2026-09-23: warm boutique elegance with layered photo compositions, gold ornament and framing, texture and light, and rich motion. Rejected the same day: a plain editorial refinement and a sparse lookbook.
+- Variant 2 (this branch), specified by the user on 2026-09-24: completely different from variant 1; warm white paper with burgundy `#6b1428` as the primary colour; mood "modern minimal luxury" (visible hairline grid, square corners, 1px rules, one burgundy colour field per page); Instrument Serif for display with Geist for body; Services, Pillars, Appointment and FAQ on their own pages; the appointment page is the application form only. The OG image and icons use the self-hosted Instrument Serif files in `app/fonts`.
+- Carried over from variant 1 feedback: little text per section, photographs used generously, every section animated with scroll reveals that replay in reverse, the platform cursor, readable type (a hairline Didone was rejected), and drawn graphics wherever a section has no photograph (here: burgundy monoline marks in `components/Marks.tsx`, one mark per idea).
+- The Truth Session is the entry offer: its button is the page's burgundy primary on home and services and links to Stripe checkout; VIP Mentoring is reached by application.
+- Variant 1 (`main`): near-black ground with champagne gold, Cormorant Garamond with Manrope, engraved gold line art, warm boutique elegance with layered photo compositions. Rejected for variant 1 on 2026-09-23: a plain editorial refinement and a sparse lookbook.
+- Copy the mentor should confirm (both variants): the FAQ answer describing what follows a Truth Session booking (receipt, intake by email, session time), and "applying commits you to nothing". Variant 2 FAQ answers on Zoom, invoices, declined applications and the 14-day withdrawal are drawn from `lib/terms.ts`.
 - Voice: direct, confrontational, declarative sentences; no coaching clichés, no hype, no emoji.
 
 ## Evidence on Hand
